@@ -178,7 +178,21 @@ function Index() {
         const still = window.matchMedia(
           "(prefers-reduced-motion:reduce)"
         ).matches;
+        let hidden = false;
+        const onVis = () => {
+          hidden = document.hidden;
+          if (!hidden && !still) raf = requestAnimationFrame(f);
+        };
+        document.addEventListener("visibilitychange", onVis);
         const f = (ms: number) => {
+          if (hidden) return;
+          // Idle drift: when no pointer/touch for 2s (e.g. touch devices),
+          // glide the colour field along a gentle lissajous path.
+          if (ms - lastMove > 2000) {
+            const t = ms / 1000;
+            tx = 0.5 + 0.32 * Math.sin(t * 0.35);
+            ty = 0.5 + 0.3 * Math.cos(t * 0.27);
+          }
           mx += (tx - mx) * 0.06;
           my += (ty - my) * 0.06;
           gl.uniform2f(ur, cv.width, cv.height);
@@ -188,7 +202,10 @@ function Index() {
           if (!still) raf = requestAnimationFrame(f);
         };
         raf = requestAnimationFrame(f);
-        cleanupGl = () => window.removeEventListener("resize", rs);
+        cleanupGl = () => {
+          window.removeEventListener("resize", rs);
+          document.removeEventListener("visibilitychange", onVis);
+        };
       }
     }
 
