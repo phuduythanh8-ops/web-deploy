@@ -95,12 +95,13 @@ function Index() {
     // Hero kinetic type
     const hs = root.querySelectorAll<HTMLElement>(".hero h1 span");
     const onScroll = () => {
+      if (reduced) return;
       const y = window.scrollY;
       hs.forEach((s) => {
         s.style.transform = `translateX(${y * parseFloat(s.dataset["s"] || "0") * 3}px)`;
       });
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    if (!reduced) window.addEventListener("scroll", onScroll, { passive: true });
 
     // Pointer / touch glow
     let mx = 0.5,
