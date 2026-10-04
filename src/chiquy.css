@@ -44,11 +44,11 @@ color:var(--fg);font-family:var(--sans);overflow-x:hidden;min-height:100vh}
 .cq-root .filter.active,.cq-root .filter:hover{background:var(--fg);color:#111}
 .cq-root .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 .cq-root .stack{perspective:1200px}
-.cq-root .card{transform:translateZ(0);will-change:transform;--mx:50%;--my:50%;transition:transform .55s cubic-bezier(.22,1,.36,1),filter .55s cubic-bezier(.22,1,.36,1),opacity .55s}
+.cq-root .card{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));will-change:transform;--mx:50%;--my:50%;transition:transform .55s cubic-bezier(.22,1,.36,1),filter .55s cubic-bezier(.22,1,.36,1),opacity .55s,box-shadow .55s}
 /* Hover stack: hovered card lifts, siblings tuck behind */
 .cq-root .stack.hovering .card{filter:saturate(.75) brightness(.82);opacity:.85}
-.cq-root .stack.hovering .card:not(.lift){transform:translateZ(0) translateY(calc(var(--dir,1)*26px)) scale(.965)}
-.cq-root .stack .card.lift{filter:none;opacity:1;z-index:5;box-shadow:0 -30px 80px rgba(0,0,0,.5)}
+.cq-root .stack.hovering .card:not(.lift){transform:translateY(calc(var(--dir,1)*26px)) scale(.965)}
+.cq-root .stack .card.lift{filter:none;opacity:1;z-index:5;box-shadow:0 -30px 80px rgba(0,0,0,.5);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-14px) scale(1.015)}
 .cq-root .card:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(255,255,255,.45),transparent 65%)}
 .cq-root .card:nth-child(3):before{background:radial-gradient(420px circle at var(--mx) var(--my),rgba(216,242,75,.35),transparent 65%)}
 .cq-root .card:hover:before,.cq-root .card.touch:before{opacity:1}
