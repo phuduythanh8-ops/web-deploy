@@ -100,19 +100,26 @@ function Index() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Pointer glow
+    // Pointer / touch glow
     let mx = 0.5,
       my = 0.5,
       tx = 0.5,
-      ty = 0.5;
+      ty = 0.5,
+      lastMove = 0;
     const glow = glowRef.current;
-    const onPointer = (e: PointerEvent) => {
-      tx = e.clientX / window.innerWidth;
-      ty = 1 - e.clientY / window.innerHeight;
-      if (glow)
-        glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    const setTarget = (x: number, y: number) => {
+      tx = x / window.innerWidth;
+      ty = 1 - y / window.innerHeight;
+      lastMove = performance.now();
+      if (glow) glow.style.transform = `translate(${x}px,${y}px)`;
     };
-    window.addEventListener("pointermove", onPointer);
+    const onPointer = (e: PointerEvent) => setTarget(e.clientX, e.clientY);
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (t) setTarget(t.clientX, t.clientY);
+    };
+    window.addEventListener("pointermove", onPointer, { passive: true });
+    window.addEventListener("touchmove", onTouch, { passive: true });
 
     // Magnetic CTA
     const cta = ctaRef.current;
@@ -171,7 +178,21 @@ function Index() {
         const still = window.matchMedia(
           "(prefers-reduced-motion:reduce)"
         ).matches;
+        let hidden = false;
+        const onVis = () => {
+          hidden = document.hidden;
+          if (!hidden && !still) raf = requestAnimationFrame(f);
+        };
+        document.addEventListener("visibilitychange", onVis);
         const f = (ms: number) => {
+          if (hidden) return;
+          // Idle drift: when no pointer/touch for 2s (e.g. touch devices),
+          // glide the colour field along a gentle lissajous path.
+          if (ms - lastMove > 2000) {
+            const t = ms / 1000;
+            tx = 0.5 + 0.32 * Math.sin(t * 0.35);
+            ty = 0.5 + 0.3 * Math.cos(t * 0.27);
+          }
           mx += (tx - mx) * 0.06;
           my += (ty - my) * 0.06;
           gl.uniform2f(ur, cv.width, cv.height);
@@ -181,7 +202,10 @@ function Index() {
           if (!still) raf = requestAnimationFrame(f);
         };
         raf = requestAnimationFrame(f);
-        cleanupGl = () => window.removeEventListener("resize", rs);
+        cleanupGl = () => {
+          window.removeEventListener("resize", rs);
+          document.removeEventListener("visibilitychange", onVis);
+        };
       }
     }
 
@@ -189,6 +213,7 @@ function Index() {
       io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("pointermove", onPointer);
+      window.removeEventListener("touchmove", onTouch);
       if (cta) {
         cta.removeEventListener("mousemove", onCtaMove);
         cta.removeEventListener("mouseleave", onCtaLeave);
