@@ -142,7 +142,8 @@ function Index() {
 
     // Service cards: cursor/touch spotlight + slight tilt
     const cards = Array.from(root.querySelectorAll<HTMLElement>(".card"));
-    const cardHandlers = cards.map((card) => {
+    const stack = root.querySelector<HTMLElement>(".stack");
+    const cardHandlers = cards.map((card, idx) => {
       const move = (x: number, y: number) => {
         const r = card.getBoundingClientRect();
         const px = x - r.left,
@@ -150,9 +151,8 @@ function Index() {
         card.style.setProperty("--mx", `${px}px`);
         card.style.setProperty("--my", `${py}px`);
         if (hoverOk && !reduced) {
-          const rx = ((py / r.height) - 0.5) * -4;
-          const ry = ((px / r.width) - 0.5) * 4;
-          card.style.transform = `translateZ(0) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+          card.style.setProperty("--rx", `${(py / r.height - 0.5) * -4}deg`);
+          card.style.setProperty("--ry", `${(px / r.width - 0.5) * 4}deg`);
         }
       };
       const onMove = (e: PointerEvent) => move(e.clientX, e.clientY);
@@ -160,10 +160,23 @@ function Index() {
         const t = e.touches[0];
         if (t) move(t.clientX, t.clientY);
       };
-      const onEnter = () => card.classList.add("touch");
+      const onEnter = () => {
+        card.classList.add("touch");
+        if (stack && !reduced) {
+          stack.classList.add("hovering");
+          card.classList.add("lift");
+          // siblings above the hovered card tuck up, below tuck down
+          cards.forEach((c, i) =>
+            c.style.setProperty("--dir", i < idx ? "-1" : "1")
+          );
+        }
+      };
       const onLeave = () => {
-        card.classList.remove("touch");
-        card.style.transform = "translateZ(0)";
+        card.classList.remove("touch", "lift");
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+        if (stack && !cards.some((c) => c.classList.contains("touch")))
+          stack.classList.remove("hovering");
       };
       card.addEventListener("pointermove", onMove, { passive: true });
       card.addEventListener("touchmove", onTouchMove, { passive: true });
