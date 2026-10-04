@@ -137,6 +137,39 @@ function Index() {
       cta.addEventListener("mouseleave", onCtaLeave);
     }
 
+    // Service cards: cursor/touch spotlight + slight tilt
+    const cards = Array.from(root.querySelectorAll<HTMLElement>(".card"));
+    const cardHandlers = cards.map((card) => {
+      const move = (x: number, y: number) => {
+        const r = card.getBoundingClientRect();
+        const px = x - r.left,
+          py = y - r.top;
+        card.style.setProperty("--mx", `${px}px`);
+        card.style.setProperty("--my", `${py}px`);
+        if (hoverOk) {
+          const rx = ((py / r.height) - 0.5) * -4;
+          const ry = ((px / r.width) - 0.5) * 4;
+          card.style.transform = `translateZ(0) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        }
+      };
+      const onMove = (e: PointerEvent) => move(e.clientX, e.clientY);
+      const onTouchMove = (e: TouchEvent) => {
+        const t = e.touches[0];
+        if (t) move(t.clientX, t.clientY);
+      };
+      const onEnter = () => card.classList.add("touch");
+      const onLeave = () => {
+        card.classList.remove("touch");
+        card.style.transform = "translateZ(0)";
+      };
+      card.addEventListener("pointermove", onMove, { passive: true });
+      card.addEventListener("touchmove", onTouchMove, { passive: true });
+      card.addEventListener("touchstart", onEnter, { passive: true });
+      card.addEventListener("pointerleave", onLeave);
+      card.addEventListener("touchend", onLeave);
+      return { card, onMove, onTouchMove, onEnter, onLeave };
+    });
+
     // WebGL liquid background
     let raf = 0;
     const cv = canvasRef.current;
