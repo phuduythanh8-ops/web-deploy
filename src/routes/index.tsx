@@ -77,6 +77,8 @@ function Index() {
     const root = rootRef.current;
     if (!root) return;
 
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // Reveal on scroll
     const io = new IntersectionObserver(
       (es) =>
