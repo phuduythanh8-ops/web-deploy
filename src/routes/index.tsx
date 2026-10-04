@@ -100,19 +100,26 @@ function Index() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Pointer glow
+    // Pointer / touch glow
     let mx = 0.5,
       my = 0.5,
       tx = 0.5,
-      ty = 0.5;
+      ty = 0.5,
+      lastMove = 0;
     const glow = glowRef.current;
-    const onPointer = (e: PointerEvent) => {
-      tx = e.clientX / window.innerWidth;
-      ty = 1 - e.clientY / window.innerHeight;
-      if (glow)
-        glow.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+    const setTarget = (x: number, y: number) => {
+      tx = x / window.innerWidth;
+      ty = 1 - y / window.innerHeight;
+      lastMove = performance.now();
+      if (glow) glow.style.transform = `translate(${x}px,${y}px)`;
     };
-    window.addEventListener("pointermove", onPointer);
+    const onPointer = (e: PointerEvent) => setTarget(e.clientX, e.clientY);
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (t) setTarget(t.clientX, t.clientY);
+    };
+    window.addEventListener("pointermove", onPointer, { passive: true });
+    window.addEventListener("touchmove", onTouch, { passive: true });
 
     // Magnetic CTA
     const cta = ctaRef.current;
