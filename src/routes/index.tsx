@@ -114,7 +114,7 @@ function Index() {
       tx = x / window.innerWidth;
       ty = 1 - y / window.innerHeight;
       lastMove = performance.now();
-      if (glow) glow.style.transform = `translate(${x}px,${y}px)`;
+      if (glow && !reduced) glow.style.transform = `translate(${x}px,${y}px)`;
     };
     const onPointer = (e: PointerEvent) => setTarget(e.clientX, e.clientY);
     const onTouch = (e: TouchEvent) => {
