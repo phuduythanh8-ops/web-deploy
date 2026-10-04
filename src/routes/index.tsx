@@ -95,7 +95,7 @@ function Index() {
     const onScroll = () => {
       const y = window.scrollY;
       hs.forEach((s) => {
-        s.style.transform = `translateX(${y * parseFloat(s.dataset.s || "0") * 3}px)`;
+        s.style.transform = `translateX(${y * parseFloat(s.dataset["s"] || "0") * 3}px)`;
       });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
