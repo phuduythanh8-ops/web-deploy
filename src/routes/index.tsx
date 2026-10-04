@@ -251,6 +251,13 @@ function Index() {
         cta.removeEventListener("mousemove", onCtaMove);
         cta.removeEventListener("mouseleave", onCtaLeave);
       }
+      cardHandlers.forEach(({ card, onMove, onTouchMove, onEnter, onLeave }) => {
+        card.removeEventListener("pointermove", onMove);
+        card.removeEventListener("touchmove", onTouchMove);
+        card.removeEventListener("touchstart", onEnter);
+        card.removeEventListener("pointerleave", onLeave);
+        card.removeEventListener("touchend", onLeave);
+      });
       cancelAnimationFrame(raf);
       cleanupGl();
     };
