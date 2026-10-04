@@ -135,7 +135,7 @@ function Index() {
     const onCtaLeave = () => {
       if (cta) cta.style.transform = "";
     };
-    if (hoverOk && cta) {
+    if (hoverOk && cta && !reduced) {
       cta.addEventListener("mousemove", onCtaMove);
       cta.addEventListener("mouseleave", onCtaLeave);
     }
