@@ -42,7 +42,8 @@ color:var(--fg);font-family:var(--sans);overflow-x:hidden;min-height:100vh}
 .cq-root .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .cq-root .filter{background:rgba(255,255,255,.06);color:inherit;border:1px solid rgba(255,255,255,.35);padding:9px 15px;border-radius:99px;font-family:var(--mono);font-size:11px;cursor:pointer;transition:.25s}
 .cq-root .filter.active,.cq-root .filter:hover{background:var(--fg);color:#111}
-.cq-root .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 22px;scrollbar-width:thin}
+.cq-root .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.cq-root .card{transform:translateZ(0);will-change:transform}
 .cq-root .sample{flex:0 0 min(80vw,540px);scroll-snap-align:start;border:1px solid rgba(255,255,255,.22);border-radius:26px;padding:14px;background:rgba(255,255,255,.05);transition:transform .35s,border-color .3s}
 .cq-root .sample:hover{transform:translateY(-10px) rotate(-1deg);border-color:var(--lime)}
 .cq-root .vis{height:340px;border-radius:16px;position:relative;overflow:hidden}
