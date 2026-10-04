@@ -213,6 +213,7 @@ function Index() {
       io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("pointermove", onPointer);
+      window.removeEventListener("touchmove", onTouch);
       if (cta) {
         cta.removeEventListener("mousemove", onCtaMove);
         cta.removeEventListener("mouseleave", onCtaLeave);
