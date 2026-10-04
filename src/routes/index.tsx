@@ -77,6 +77,8 @@ function Index() {
     const root = rootRef.current;
     if (!root) return;
 
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // Reveal on scroll
     const io = new IntersectionObserver(
       (es) =>
@@ -93,12 +95,13 @@ function Index() {
     // Hero kinetic type
     const hs = root.querySelectorAll<HTMLElement>(".hero h1 span");
     const onScroll = () => {
+      if (reduced) return;
       const y = window.scrollY;
       hs.forEach((s) => {
         s.style.transform = `translateX(${y * parseFloat(s.dataset["s"] || "0") * 3}px)`;
       });
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
+    if (!reduced) window.addEventListener("scroll", onScroll, { passive: true });
 
     // Pointer / touch glow
     let mx = 0.5,
@@ -111,7 +114,7 @@ function Index() {
       tx = x / window.innerWidth;
       ty = 1 - y / window.innerHeight;
       lastMove = performance.now();
-      if (glow) glow.style.transform = `translate(${x}px,${y}px)`;
+      if (glow && !reduced) glow.style.transform = `translate(${x}px,${y}px)`;
     };
     const onPointer = (e: PointerEvent) => setTarget(e.clientX, e.clientY);
     const onTouch = (e: TouchEvent) => {
@@ -132,7 +135,7 @@ function Index() {
     const onCtaLeave = () => {
       if (cta) cta.style.transform = "";
     };
-    if (hoverOk && cta) {
+    if (hoverOk && cta && !reduced) {
       cta.addEventListener("mousemove", onCtaMove);
       cta.addEventListener("mouseleave", onCtaLeave);
     }
@@ -146,7 +149,7 @@ function Index() {
           py = y - r.top;
         card.style.setProperty("--mx", `${px}px`);
         card.style.setProperty("--my", `${py}px`);
-        if (hoverOk) {
+        if (hoverOk && !reduced) {
           const rx = ((py / r.height) - 0.5) * -4;
           const ry = ((px / r.width) - 0.5) * 4;
           card.style.transform = `translateZ(0) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
