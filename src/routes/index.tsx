@@ -149,7 +149,7 @@ function Index() {
           py = y - r.top;
         card.style.setProperty("--mx", `${px}px`);
         card.style.setProperty("--my", `${py}px`);
-        if (hoverOk) {
+        if (hoverOk && !reduced) {
           const rx = ((py / r.height) - 0.5) * -4;
           const ry = ((px / r.width) - 0.5) * 4;
           card.style.transform = `translateZ(0) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
