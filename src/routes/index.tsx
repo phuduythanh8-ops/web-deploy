@@ -179,6 +179,7 @@ function Index() {
           stack.classList.remove("hovering");
       };
       card.addEventListener("pointermove", onMove, { passive: true });
+      card.addEventListener("pointerenter", onEnter);
       card.addEventListener("touchmove", onTouchMove, { passive: true });
       card.addEventListener("touchstart", onEnter, { passive: true });
       card.addEventListener("pointerleave", onLeave);
