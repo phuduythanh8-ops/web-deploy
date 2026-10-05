@@ -220,7 +220,14 @@ function Index() {
     // WebGL liquid background
     let raf = 0;
     const cv = canvasRef.current;
-    const gl = cv?.getContext("webgl");
+    const glOpts: WebGLContextAttributes = {
+      antialias: false,
+      depth: false,
+      powerPreference: "low-power",
+      preserveDrawingBuffer: false,
+    };
+    const gl = (cv?.getContext("webgl", glOpts) ||
+      cv?.getContext("experimental-webgl", glOpts)) as WebGLRenderingContext | null;
     let cleanupGl = () => {};
     if (cv && gl) {
       const sh = (t: number, s: string) => {
@@ -289,6 +296,7 @@ function Index() {
         raf = requestAnimationFrame(f);
         cleanupGl = () => {
           window.removeEventListener("resize", rs);
+          window.removeEventListener("orientationchange", rs);
           document.removeEventListener("visibilitychange", onVis);
         };
       }
