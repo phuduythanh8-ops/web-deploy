@@ -143,6 +143,14 @@ function Index() {
     // Service cards: cursor/touch spotlight + slight tilt
     const cards = Array.from(root.querySelectorAll<HTMLElement>(".card"));
     const stack = root.querySelector<HTMLElement>(".stack");
+    const clearCards = () => {
+      cards.forEach((item) => {
+        item.classList.remove("touch", "lift");
+        item.style.setProperty("--rx", "0deg");
+        item.style.setProperty("--ry", "0deg");
+      });
+      stack?.classList.remove("hovering");
+    };
     const cardHandlers = cards.map((card, idx) => {
       const move = (x: number, y: number) => {
         const r = card.getBoundingClientRect();
@@ -160,7 +168,7 @@ function Index() {
         const t = e.touches[0];
         if (t) move(t.clientX, t.clientY);
       };
-      const onEnter = () => {
+      const activate = () => {
         card.classList.add("touch");
         if (stack && !reduced) {
           stack.classList.add("hovering");
@@ -171,7 +179,17 @@ function Index() {
           );
         }
       };
-      const onLeave = () => {
+      const onEnter = (e: PointerEvent) => {
+        if (e.pointerType === "mouse") activate();
+      };
+      const onTouchStart = (e: TouchEvent) => {
+        const t = e.touches[0];
+        clearCards();
+        if (t) move(t.clientX, t.clientY);
+        activate();
+      };
+      const onLeave = (e: PointerEvent) => {
+        if (e.pointerType !== "mouse") return;
         card.classList.remove("touch", "lift");
         card.style.setProperty("--rx", "0deg");
         card.style.setProperty("--ry", "0deg");
@@ -181,11 +199,15 @@ function Index() {
       card.addEventListener("pointermove", onMove, { passive: true });
       card.addEventListener("pointerenter", onEnter);
       card.addEventListener("touchmove", onTouchMove, { passive: true });
-      card.addEventListener("touchstart", onEnter, { passive: true });
+      card.addEventListener("touchstart", onTouchStart, { passive: true });
       card.addEventListener("pointerleave", onLeave);
-      card.addEventListener("touchend", onLeave);
-      return { card, onMove, onTouchMove, onEnter, onLeave };
+      return { card, onMove, onTouchMove, onEnter, onTouchStart, onLeave };
     });
+    const onOutsideTouch = (e: TouchEvent) => {
+      const target = e.target;
+      if (target instanceof Element && !target.closest(".card")) clearCards();
+    };
+    document.addEventListener("touchstart", onOutsideTouch, { passive: true });
 
     // WebGL liquid background
     let raf = 0;
@@ -268,13 +290,13 @@ function Index() {
         cta.removeEventListener("mousemove", onCtaMove);
         cta.removeEventListener("mouseleave", onCtaLeave);
       }
-      cardHandlers.forEach(({ card, onMove, onTouchMove, onEnter, onLeave }) => {
+      cardHandlers.forEach(({ card, onMove, onTouchMove, onEnter, onTouchStart, onLeave }) => {
         card.removeEventListener("pointermove", onMove);
         card.removeEventListener("touchmove", onTouchMove);
-        card.removeEventListener("touchstart", onEnter);
+        card.removeEventListener("touchstart", onTouchStart);
         card.removeEventListener("pointerleave", onLeave);
-        card.removeEventListener("touchend", onLeave);
       });
+      document.removeEventListener("touchstart", onOutsideTouch);
       cancelAnimationFrame(raf);
       cleanupGl();
     };
