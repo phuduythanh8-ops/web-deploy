@@ -50,8 +50,16 @@ const SAMPLES = [
   },
 ];
 
-const FRAG = `precision mediump float;uniform vec2 r,m;uniform float t;
-float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+// Mobile GPUs often treat mediump as 16-bit float: the classic
+// fract(sin(x)*43758.) hash overflows there and paints the canvas black.
+// Use highp when available and a sin-free hash that stays stable at low precision.
+const FRAG = `#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+uniform vec2 r,m;uniform float t;
+float h(vec2 p){vec3 p3=fract(vec3(p.xyx)*.1031);p3+=dot(p3,p3.yzx+33.33);return fract((p3.x+p3.y)*p3.z);}
 float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
 float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*n(p);p*=2.;a*=.5;}return v;}
 void main(){vec2 u=gl_FragCoord.xy/r;float k=r.x/r.y;vec2 p=u*vec2(k,1.)*2.5,mm=m*vec2(k,1.)*2.5;float d=distance(p,mm);
@@ -241,19 +249,23 @@ function Index() {
         const um = gl.getUniformLocation(pr, "m");
         const ut = gl.getUniformLocation(pr, "t");
         const rs = () => {
-          cv.width = window.innerWidth * 0.5;
-          cv.height = window.innerHeight * 0.5;
+          // Half resolution keeps phones/tablets smooth; cap very large screens.
+          const scale = Math.min(0.5, 900 / Math.max(window.innerWidth, 1));
+          cv.width = Math.max(2, Math.round(window.innerWidth * Math.max(scale, 0.35)));
+          cv.height = Math.max(2, Math.round(window.innerHeight * Math.max(scale, 0.35)));
           gl.viewport(0, 0, cv.width, cv.height);
         };
         rs();
         window.addEventListener("resize", rs);
-        const still = window.matchMedia(
-          "(prefers-reduced-motion:reduce)"
-        ).matches;
+        window.addEventListener("orientationchange", rs);
+        // Background is ambient (not tied to scrolling), so it keeps flowing
+        // everywhere — just slower when the device asks for reduced motion.
+        const speed = reduced ? 0.35 : 1;
         let hidden = false;
         const onVis = () => {
           hidden = document.hidden;
-          if (!hidden && !still) raf = requestAnimationFrame(f);
+          cancelAnimationFrame(raf);
+          if (!hidden) raf = requestAnimationFrame(f);
         };
         document.addEventListener("visibilitychange", onVis);
         const f = (ms: number) => {
@@ -261,7 +273,7 @@ function Index() {
           // Idle drift: when no pointer/touch for 2s (e.g. touch devices),
           // glide the colour field along a gentle lissajous path.
           if (ms - lastMove > 2000) {
-            const t = ms / 1000;
+            const t = (ms / 1000) * speed;
             tx = 0.5 + 0.32 * Math.sin(t * 0.35);
             ty = 0.5 + 0.3 * Math.cos(t * 0.27);
           }
@@ -269,9 +281,10 @@ function Index() {
           my += (ty - my) * 0.06;
           gl.uniform2f(ur, cv.width, cv.height);
           gl.uniform2f(um, mx, my);
-          gl.uniform1f(ut, ms / 1000);
+          // Wrap time so low-precision GPUs never lose accuracy over long sessions.
+          gl.uniform1f(ut, ((ms / 1000) * speed) % 600);
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-          if (!still) raf = requestAnimationFrame(f);
+          raf = requestAnimationFrame(f);
         };
         raf = requestAnimationFrame(f);
         cleanupGl = () => {
