@@ -7,8 +7,8 @@ color:var(--fg);font-family:var(--sans);overflow-x:hidden;min-height:100vh}
 .cq-root a{color:inherit;text-decoration:none}
 .cq-root .mono{font-family:var(--mono);font-size:11px;letter-spacing:.06em}
 .cq-root #gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;background:radial-gradient(circle at 30% 30%,#3157ff,#09090d 60%)}
-.cq-root .glow{position:fixed;z-index:80;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(216,242,75,.28),transparent 65%);mix-blend-mode:screen;display:none}
-@media(hover:hover){.cq-root .glow{display:block}}
+.cq-root .glow{position:fixed;z-index:80;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(216,242,75,.28),transparent 65%);mix-blend-mode:screen;display:block;transform:translate(-600px,-600px);will-change:transform}
+@media(hover:none){.cq-root .glow{width:240px;height:240px;margin:-120px 0 0 -120px}}
 .cq-root .nav{position:fixed;z-index:50;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px 6px 6px 18px;border-radius:99px;background:rgba(15,15,22,.55);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);max-width:calc(100% - 20px)}
 .cq-root .logo{font-weight:700;letter-spacing:-.04em;margin-right:10px;white-space:nowrap}
 .cq-root .nav a:not(.logo){font-family:var(--mono);font-size:11px;padding:9px 13px;border-radius:99px;transition:.25s}
