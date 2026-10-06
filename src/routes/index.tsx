@@ -100,14 +100,27 @@ function Index() {
     );
     root.querySelectorAll(".rv").forEach((el) => io.observe(el));
 
-    // Hero kinetic type
+    // Hero kinetic type: interpolate scroll movement so touch momentum remains smooth.
     const hs = root.querySelectorAll<HTMLElement>(".hero h1 span");
+    let heroRaf = 0;
+    let heroTarget = window.scrollY;
+    let heroCurrent = heroTarget;
+    const renderHero = () => {
+      heroCurrent += (heroTarget - heroCurrent) * 0.14;
+      const touchStrength = window.matchMedia("(pointer: coarse)").matches ? 1.8 : 3;
+      hs.forEach((s) => {
+        s.style.transform = `translate3d(${heroCurrent * parseFloat(s.dataset["s"] || "0") * touchStrength}px,0,0)`;
+      });
+      if (Math.abs(heroTarget - heroCurrent) > 0.1) {
+        heroRaf = requestAnimationFrame(renderHero);
+      } else {
+        heroRaf = 0;
+      }
+    };
     const onScroll = () => {
       if (reduced) return;
-      const y = window.scrollY;
-      hs.forEach((s) => {
-        s.style.transform = `translateX(${y * parseFloat(s.dataset["s"] || "0") * 3}px)`;
-      });
+      heroTarget = window.scrollY;
+      if (!heroRaf) heroRaf = requestAnimationFrame(renderHero);
     };
     if (!reduced) window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -160,21 +173,24 @@ function Index() {
       stack?.classList.remove("hovering");
     };
     const cardHandlers = cards.map((card, idx) => {
-      const move = (x: number, y: number) => {
+      const move = (x: number, y: number, touch = false) => {
         const r = card.getBoundingClientRect();
         const px = x - r.left,
           py = y - r.top;
         card.style.setProperty("--mx", `${px}px`);
         card.style.setProperty("--my", `${py}px`);
-        if (hoverOk && !reduced) {
-          card.style.setProperty("--rx", `${(py / r.height - 0.5) * -4}deg`);
-          card.style.setProperty("--ry", `${(px / r.width - 0.5) * 4}deg`);
+        if ((hoverOk || touch) && !reduced) {
+          const tilt = touch ? 3 : 4;
+          const nx = Math.max(-0.5, Math.min(0.5, px / r.width - 0.5));
+          const ny = Math.max(-0.5, Math.min(0.5, py / r.height - 0.5));
+          card.style.setProperty("--rx", `${ny * -tilt}deg`);
+          card.style.setProperty("--ry", `${nx * tilt}deg`);
         }
       };
       const onMove = (e: PointerEvent) => move(e.clientX, e.clientY);
       const onTouchMove = (e: TouchEvent) => {
         const t = e.touches[0];
-        if (t) move(t.clientX, t.clientY);
+        if (t) move(t.clientX, t.clientY, true);
       };
       const activate = () => {
         card.classList.add("touch");
@@ -193,7 +209,7 @@ function Index() {
       const onTouchStart = (e: TouchEvent) => {
         const t = e.touches[0];
         clearCards();
-        if (t) move(t.clientX, t.clientY);
+        if (t) move(t.clientX, t.clientY, true);
         activate();
       };
       const onLeave = (e: PointerEvent) => {
@@ -313,11 +329,13 @@ function Index() {
       }
       cardHandlers.forEach(({ card, onMove, onTouchMove, onEnter, onTouchStart, onLeave }) => {
         card.removeEventListener("pointermove", onMove);
+        card.removeEventListener("pointerenter", onEnter);
         card.removeEventListener("touchmove", onTouchMove);
         card.removeEventListener("touchstart", onTouchStart);
         card.removeEventListener("pointerleave", onLeave);
       });
       document.removeEventListener("touchstart", onOutsideTouch);
+      cancelAnimationFrame(heroRaf);
       cancelAnimationFrame(raf);
       cleanupGl();
     };
