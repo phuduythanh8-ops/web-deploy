@@ -571,6 +571,27 @@ function Index() {
             <span className="o">SOMETHING.</span>
           </h2>
         </div>
+        <div className="searchbar rv">
+          <input
+            type="search"
+            className="search"
+            placeholder="TÌM THEO TÊN / MÃ SỐ — VD: CQ-W-026, NEON…"
+            aria-label="Tìm sample theo tên hoặc mã số"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          {(query || styles.length > 0) && (
+            <button
+              className="filter clear"
+              onClick={() => {
+                setQuery("");
+                setStyles([]);
+              }}
+            >
+              XOÁ ✕
+            </button>
+          )}
+        </div>
         <div className="filters rv">
           {FILTERS.map((t) => (
             <button
@@ -584,19 +605,34 @@ function Index() {
             </button>
           ))}
         </div>
-        <div className="rail rv">
-          {SAMPLES.map((s) => (
-            <article
-              key={s.code}
-              className={`sample ${s.cls}`}
-              data-tags={s.tags}
-              hidden={!(filter === "all" || s.tags.split(" ").includes(filter))}
+        <div className="filters styles rv">
+          <span className="mono styles-label">PHONG CÁCH:</span>
+          {STYLE_TAGS.map((t) => (
+            <button
+              key={t}
+              className={`filter style${styles.includes(t) ? " active" : ""}`}
+              aria-pressed={styles.includes(t)}
+              onClick={() => toggleStyle(t)}
             >
+              {t.toUpperCase()}
+            </button>
+          ))}
+        </div>
+        <div className="rail rv">
+          {visibleSamples.length === 0 && (
+            <p className="mono noresult">
+              KHÔNG THẤY SAMPLE NÀO KHỚP — THỬ TỪ KHOÁ HOẶC TAG KHÁC.
+            </p>
+          )}
+          {visibleSamples.map((s) => (
+            <article key={s.code} className={`sample ${s.cls}`} data-tags={s.tags}>
               <div className="vis" />
               <div className="meta">
                 <div className="code">{s.code}</div>
                 <div className="name">{s.name}</div>
-                <div className="tags">{s.label}</div>
+                <div className="tags">
+                  {s.label} · {s.styles.map((t) => `#${t.toUpperCase()}`).join(" ")}
+                </div>
               </div>
             </article>
           ))}
