@@ -28,10 +28,14 @@ export const Route = createFileRoute("/")({
 
 const FILTERS = ["all", "web", "video", "event", "3d", "motion", "brand"];
 
+// Style tags — thể loại/phong cách sản phẩm, chọn được nhiều tag cùng lúc.
+const STYLE_TAGS = ["hiện đại", "cổ điển", "tối giản", "tương lai", "đường phố"];
+
 const SAMPLES = [
   {
     cls: "s1",
     tags: "web 3d brand",
+    styles: ["hiện đại", "tương lai"],
     code: "CQ-W-026",
     name: "Sculpture / Web",
     label: "#WEB #3D #BRAND",
@@ -39,6 +43,7 @@ const SAMPLES = [
   {
     cls: "s2",
     tags: "video motion brand",
+    styles: ["đường phố", "hiện đại"],
     code: "CQ-V-019",
     name: "Afterimage",
     label: "#VIDEO #MOTION #BRAND",
@@ -46,11 +51,44 @@ const SAMPLES = [
   {
     cls: "s3",
     tags: "event brand",
+    styles: ["đường phố"],
     code: "CQ-E-008",
     name: "Night Market",
     label: "#EVENT #BRAND",
   },
+  {
+    cls: "s4",
+    tags: "web brand",
+    styles: ["cổ điển", "tối giản"],
+    code: "CQ-W-031",
+    name: "Heritage House",
+    label: "#WEB #BRAND",
+  },
+  {
+    cls: "s5",
+    tags: "video motion",
+    styles: ["tương lai", "tối giản"],
+    code: "CQ-V-024",
+    name: "Neon Drift",
+    label: "#VIDEO #MOTION",
+  },
+  {
+    cls: "s6",
+    tags: "event 3d",
+    styles: ["cổ điển", "hiện đại"],
+    code: "CQ-E-012",
+    name: "Lantern Gala",
+    label: "#EVENT #3D",
+  },
 ];
+
+// Bỏ dấu tiếng Việt để gõ "hien dai" vẫn tìm ra "hiện đại".
+const norm = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/đ/g, "d");
 
 // Mobile GPUs often treat mediump as 16-bit float: the classic
 // fract(sin(x)*43758.) hash overflows there and paints the canvas black.
