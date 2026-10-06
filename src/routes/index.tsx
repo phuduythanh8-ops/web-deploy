@@ -120,6 +120,24 @@ function Index() {
   const glowRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
   const [filter, setFilter] = useState("all");
+  const [query, setQuery] = useState("");
+  const [styles, setStyles] = useState<string[]>([]);
+
+  const toggleStyle = (t: string) =>
+    setStyles((prev) =>
+      prev.includes(t) ? prev.filter((s) => s !== t) : [...prev, t]
+    );
+
+  const q = norm(query.trim());
+  const visibleSamples = SAMPLES.filter((s) => {
+    const catOk = filter === "all" || s.tags.split(" ").includes(filter);
+    const styleOk =
+      styles.length === 0 || styles.every((t) => s.styles.includes(t));
+    const qOk =
+      q === "" ||
+      norm(`${s.name} ${s.code} ${s.tags} ${s.styles.join(" ")}`).includes(q);
+    return catOk && styleOk && qOk;
+  });
 
   useEffect(() => {
     const root = rootRef.current;
