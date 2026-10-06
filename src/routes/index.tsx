@@ -28,10 +28,14 @@ export const Route = createFileRoute("/")({
 
 const FILTERS = ["all", "web", "video", "event", "3d", "motion", "brand"];
 
+// Style tags — thể loại/phong cách sản phẩm, chọn được nhiều tag cùng lúc.
+const STYLE_TAGS = ["hiện đại", "cổ điển", "tối giản", "tương lai", "đường phố"];
+
 const SAMPLES = [
   {
     cls: "s1",
     tags: "web 3d brand",
+    styles: ["hiện đại", "tương lai"],
     code: "CQ-W-026",
     name: "Sculpture / Web",
     label: "#WEB #3D #BRAND",
@@ -39,6 +43,7 @@ const SAMPLES = [
   {
     cls: "s2",
     tags: "video motion brand",
+    styles: ["đường phố", "hiện đại"],
     code: "CQ-V-019",
     name: "Afterimage",
     label: "#VIDEO #MOTION #BRAND",
@@ -46,11 +51,44 @@ const SAMPLES = [
   {
     cls: "s3",
     tags: "event brand",
+    styles: ["đường phố"],
     code: "CQ-E-008",
     name: "Night Market",
     label: "#EVENT #BRAND",
   },
+  {
+    cls: "s4",
+    tags: "web brand",
+    styles: ["cổ điển", "tối giản"],
+    code: "CQ-W-031",
+    name: "Heritage House",
+    label: "#WEB #BRAND",
+  },
+  {
+    cls: "s5",
+    tags: "video motion",
+    styles: ["tương lai", "tối giản"],
+    code: "CQ-V-024",
+    name: "Neon Drift",
+    label: "#VIDEO #MOTION",
+  },
+  {
+    cls: "s6",
+    tags: "event 3d",
+    styles: ["cổ điển", "hiện đại"],
+    code: "CQ-E-012",
+    name: "Lantern Gala",
+    label: "#EVENT #3D",
+  },
 ];
+
+// Bỏ dấu tiếng Việt để gõ "hien dai" vẫn tìm ra "hiện đại".
+const norm = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/đ/g, "d");
 
 // Mobile GPUs often treat mediump as 16-bit float: the classic
 // fract(sin(x)*43758.) hash overflows there and paints the canvas black.
@@ -82,6 +120,24 @@ function Index() {
   const glowRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
   const [filter, setFilter] = useState("all");
+  const [query, setQuery] = useState("");
+  const [styles, setStyles] = useState<string[]>([]);
+
+  const toggleStyle = (t: string) =>
+    setStyles((prev) =>
+      prev.includes(t) ? prev.filter((s) => s !== t) : [...prev, t]
+    );
+
+  const q = norm(query.trim());
+  const visibleSamples = SAMPLES.filter((s) => {
+    const catOk = filter === "all" || s.tags.split(" ").includes(filter);
+    const styleOk =
+      styles.length === 0 || styles.every((t) => s.styles.includes(t));
+    const qOk =
+      q === "" ||
+      norm(`${s.name} ${s.code} ${s.tags} ${s.styles.join(" ")}`).includes(q);
+    return catOk && styleOk && qOk;
+  });
 
   useEffect(() => {
     const root = rootRef.current;
@@ -515,6 +571,27 @@ function Index() {
             <span className="o">SOMETHING.</span>
           </h2>
         </div>
+        <div className="searchbar rv">
+          <input
+            type="search"
+            className="search"
+            placeholder="TÌM THEO TÊN / MÃ SỐ — VD: CQ-W-026, NEON…"
+            aria-label="Tìm sample theo tên hoặc mã số"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          {(query || styles.length > 0) && (
+            <button
+              className="filter clear"
+              onClick={() => {
+                setQuery("");
+                setStyles([]);
+              }}
+            >
+              XOÁ ✕
+            </button>
+          )}
+        </div>
         <div className="filters rv">
           {FILTERS.map((t) => (
             <button
@@ -528,19 +605,34 @@ function Index() {
             </button>
           ))}
         </div>
-        <div className="rail rv">
-          {SAMPLES.map((s) => (
-            <article
-              key={s.code}
-              className={`sample ${s.cls}`}
-              data-tags={s.tags}
-              hidden={!(filter === "all" || s.tags.split(" ").includes(filter))}
+        <div className="filters styles rv">
+          <span className="mono styles-label">PHONG CÁCH:</span>
+          {STYLE_TAGS.map((t) => (
+            <button
+              key={t}
+              className={`filter style${styles.includes(t) ? " active" : ""}`}
+              aria-pressed={styles.includes(t)}
+              onClick={() => toggleStyle(t)}
             >
+              {t.toUpperCase()}
+            </button>
+          ))}
+        </div>
+        <div className="rail rv">
+          {visibleSamples.length === 0 && (
+            <p className="mono noresult">
+              KHÔNG THẤY SAMPLE NÀO KHỚP — THỬ TỪ KHOÁ HOẶC TAG KHÁC.
+            </p>
+          )}
+          {visibleSamples.map((s) => (
+            <article key={s.code} className={`sample ${s.cls}`} data-tags={s.tags}>
               <div className="vis" />
               <div className="meta">
                 <div className="code">{s.code}</div>
                 <div className="name">{s.name}</div>
-                <div className="tags">{s.label}</div>
+                <div className="tags">
+                  {s.label} · {s.styles.map((t) => `#${t.toUpperCase()}`).join(" ")}
+                </div>
               </div>
             </article>
           ))}

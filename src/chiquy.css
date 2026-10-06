@@ -40,6 +40,17 @@ color:var(--fg);font-family:var(--sans);overflow-x:hidden;min-height:100vh}
 .cq-root .price{display:grid;grid-template-columns:44px 1fr auto;gap:14px;padding:17px 0;border-top:1px solid currentColor;font-family:var(--mono);font-size:12px;transition:padding .25s}
 .cq-root .price:last-child{border-bottom:1px solid currentColor}.cq-root .price:hover{padding-left:12px}.cq-root .price strong{font-family:var(--sans);font-size:19px}
 .cq-root .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.cq-root .searchbar{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+.cq-root .search{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.35);color:inherit;border-radius:99px;padding:12px 20px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;outline:none;transition:border-color .25s,background .25s}
+.cq-root .search::placeholder{color:rgba(246,242,234,.4)}
+.cq-root .search:focus{border-color:var(--lime);background:rgba(255,255,255,.1)}
+.cq-root .search::-webkit-search-cancel-button{cursor:pointer}
+.cq-root .filter.clear{background:var(--red);border-color:var(--red);color:#fff}
+.cq-root .filters.styles{margin-top:-14px;align-items:center}
+.cq-root .styles-label{opacity:.6;margin-right:4px}
+.cq-root .filter.style{border-style:dashed}
+.cq-root .filter.style.active{background:var(--lime);border-style:solid;color:#111}
+.cq-root .noresult{padding:40px 0;opacity:.7;width:100%;text-align:center}
 .cq-root .filter{background:rgba(255,255,255,.06);color:inherit;border:1px solid rgba(255,255,255,.35);padding:9px 15px;border-radius:99px;font-family:var(--mono);font-size:11px;cursor:pointer;transition:.25s}
 .cq-root .filter.active,.cq-root .filter:hover{background:var(--fg);color:#111}
 .cq-root .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
@@ -60,6 +71,9 @@ color:var(--fg);font-family:var(--sans);overflow-x:hidden;min-height:100vh}
 .cq-root .s1 .vis{background:conic-gradient(from 20deg at 40% 55%,var(--red),var(--lime),var(--blue),var(--pink),var(--red))}
 .cq-root .s2 .vis{background:repeating-linear-gradient(115deg,var(--violet) 0 26px,var(--lime) 26px 52px,var(--pink) 52px 78px);background-size:200% 100%;animation:cq-slide 6s linear infinite}
 .cq-root .s3 .vis{background:radial-gradient(circle at 70% 30%,var(--lime) 0 18%,transparent 19%),radial-gradient(circle at 25% 70%,var(--red) 0 24%,transparent 25%),repeating-radial-gradient(circle at 50% 50%,var(--blue) 0 14px,#101030 14px 28px)}
+.cq-root .s4 .vis{background:linear-gradient(160deg,#1a1408 0%,#3a2c12 45%,#c9a227 100%)}
+.cq-root .s5 .vis{background:linear-gradient(120deg,#050510 30%,var(--blue) 60%,var(--lime) 130%)}
+.cq-root .s6 .vis{background:radial-gradient(circle at 30% 40%,var(--red) 0 12%,transparent 13%),radial-gradient(circle at 60% 60%,var(--pink) 0 16%,transparent 17%),radial-gradient(circle at 80% 25%,var(--lime) 0 10%,transparent 11%),linear-gradient(180deg,#160a12,#2a0f1e)}
 @keyframes cq-slide{to{background-position:-200% 0}}
 .cq-root .meta{padding:16px 6px 6px}.cq-root .code{font-family:var(--mono);font-size:11px;opacity:.65}.cq-root .name{font-size:34px;letter-spacing:-.05em;margin:6px 0}.cq-root .tags{font-family:var(--mono);font-size:10px;color:var(--lime)}
 .cq-root details{border-top:1px solid rgba(255,255,255,.3)}.cq-root details:last-child{border-bottom:1px solid rgba(255,255,255,.3)}
