@@ -46,7 +46,7 @@ function AuthPage() {
     e.preventDefault();
     setMsg(null);
     const parsed = schema.safeParse({ email, password });
-    if (!parsed.success) return setMsg(parsed.error.issues[0].message);
+    if (!parsed.success) return setMsg(parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ");
     setBusy(true);
     if (mode === "up") {
       const { error } = await supabase.auth.signUp({

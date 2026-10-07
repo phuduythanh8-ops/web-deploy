@@ -77,7 +77,7 @@ function CartPage() {
       const r = itemSchema.safeParse({
         facebook_url: i.facebook_url ?? "", contact_email: i.contact_email ?? "", offer_price: i.offer_price ?? NaN,
       });
-      if (!r.success) errs[i.id] = r.error.issues[0].message;
+      if (!r.success) errs[i.id] = r.error.issues[0]?.message ?? "Thiếu thông tin";
     }
     setErrors(errs);
     if (Object.keys(errs).length) return setMsg("Vui lòng điền đủ thông tin cho mỗi demo trước khi gửi.");
