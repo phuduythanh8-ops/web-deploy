@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { useSession, addToCart } from "@/lib/cart";
 import "../chiquy.css";
 
 export const Route = createFileRoute("/")({
@@ -122,6 +123,21 @@ function Index() {
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [styles, setStyles] = useState<string[]>([]);
+  const { session } = useSession();
+  const navigate = useNavigate();
+  const [added, setAdded] = useState<Record<string, string>>({});
+  const onAdd = async (code: string, name: string) => {
+    if (!session) {
+      navigate({ to: "/auth" });
+      return;
+    }
+    try {
+      const r = await addToCart(session.user.id, code, name);
+      setAdded((p) => ({ ...p, [code]: r === "added" ? "✓ ĐÃ THÊM" : "✓ ĐÃ CÓ TRONG GIỎ" }));
+    } catch {
+      setAdded((p) => ({ ...p, [code]: "LỖI — THỬ LẠI" }));
+    }
+  };
 
   const toggleStyle = (t: string) =>
     setStyles((prev) =>
@@ -411,6 +427,11 @@ function Index() {
         <a href="#archive">SAMPLES</a>
         <a href="#policy">POLICY</a>
         <a href="#contact">CONTACT</a>
+        {session ? (
+          <Link to="/cart">GIỎ DEMO</Link>
+        ) : (
+          <Link to="/auth">ĐĂNG NHẬP</Link>
+        )}
       </nav>
 
       <header className="hero" id="hero">
@@ -633,6 +654,9 @@ function Index() {
                 <div className="tags">
                   {s.label} · {s.styles.map((t) => `#${t.toUpperCase()}`).join(" ")}
                 </div>
+                <button className="addcart" onClick={() => onAdd(s.code, s.name)}>
+                  {added[s.code] ?? "+ THÊM VÀO GIỎ"}
+                </button>
               </div>
             </article>
           ))}
