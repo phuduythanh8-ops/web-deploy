@@ -16,11 +16,13 @@ export type Database = {
     Tables: {
       demo_requests: {
         Row: {
+          admin_notes: string
           contact_email: string | null
           created_at: string
           facebook_url: string | null
           id: string
           offer_price: number | null
+          processing_status: string
           sample_code: string
           sample_name: string
           status: string
@@ -28,11 +30,13 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          admin_notes?: string
           contact_email?: string | null
           created_at?: string
           facebook_url?: string | null
           id?: string
           offer_price?: number | null
+          processing_status?: string
           sample_code: string
           sample_name: string
           status?: string
@@ -40,15 +44,112 @@ export type Database = {
           user_id: string
         }
         Update: {
+          admin_notes?: string
           contact_email?: string | null
           created_at?: string
           facebook_url?: string | null
           id?: string
           offer_price?: number | null
+          processing_status?: string
           sample_code?: string
           sample_name?: string
           status?: string
           submitted_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      samples: {
+        Row: {
+          availability: string
+          code: string
+          created_at: string
+          description: string
+          id: string
+          image_url: string | null
+          name: string
+          published: boolean
+          service: string
+          styles: string[]
+          tags: string[]
+          visual_class: string
+        }
+        Insert: {
+          availability?: string
+          code: string
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          name: string
+          published?: boolean
+          service: string
+          styles?: string[]
+          tags?: string[]
+          visual_class?: string
+        }
+        Update: {
+          availability?: string
+          code?: string
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          name?: string
+          published?: boolean
+          service?: string
+          styles?: string[]
+          tags?: string[]
+          visual_class?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "samples_service_fkey"
+            columns: ["service"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
+      services: {
+        Row: {
+          leads: string
+          name: string
+          policy: string
+          slug: string
+          subtitle: string
+        }
+        Insert: {
+          leads: string
+          name: string
+          policy: string
+          slug: string
+          subtitle: string
+        }
+        Update: {
+          leads?: string
+          name?: string
+          policy?: string
+          slug?: string
+          subtitle?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
         }
         Relationships: []
@@ -58,10 +159,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_designated_admin: { Args: never; Returns: boolean }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -188,6 +296,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
