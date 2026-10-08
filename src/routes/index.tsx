@@ -1,6 +1,9 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
-import { useSession, addToCart } from "@/lib/cart";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
+import { useSession } from "@/lib/cart";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { catalogOptions } from "@/lib/catalog";
+import { CatalogView, CatalogError } from "@/components/catalog-view";
 import "../chiquy.css";
 
 export const Route = createFileRoute("/")({
@@ -24,72 +27,11 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://id-preview--3d1a485f-3638-48b1-a060-2a0b61d33967.lovable.app/chiquy-share.jpg" },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(catalogOptions),
+  errorComponent: CatalogError,
+  notFoundComponent: CatalogError,
   component: Index,
 });
-
-const FILTERS = ["all", "web", "video", "event", "3d", "motion", "brand"];
-
-// Style tags — thể loại/phong cách sản phẩm, chọn được nhiều tag cùng lúc.
-const STYLE_TAGS = ["hiện đại", "cổ điển", "tối giản", "tương lai", "đường phố"];
-
-const SAMPLES = [
-  {
-    cls: "s1",
-    tags: "web 3d brand",
-    styles: ["hiện đại", "tương lai"],
-    code: "CQ-W-026",
-    name: "Sculpture / Web",
-    label: "#WEB #3D #BRAND",
-  },
-  {
-    cls: "s2",
-    tags: "video motion brand",
-    styles: ["đường phố", "hiện đại"],
-    code: "CQ-V-019",
-    name: "Afterimage",
-    label: "#VIDEO #MOTION #BRAND",
-  },
-  {
-    cls: "s3",
-    tags: "event brand",
-    styles: ["đường phố"],
-    code: "CQ-E-008",
-    name: "Night Market",
-    label: "#EVENT #BRAND",
-  },
-  {
-    cls: "s4",
-    tags: "web brand",
-    styles: ["cổ điển", "tối giản"],
-    code: "CQ-W-031",
-    name: "Heritage House",
-    label: "#WEB #BRAND",
-  },
-  {
-    cls: "s5",
-    tags: "video motion",
-    styles: ["tương lai", "tối giản"],
-    code: "CQ-V-024",
-    name: "Neon Drift",
-    label: "#VIDEO #MOTION",
-  },
-  {
-    cls: "s6",
-    tags: "event 3d",
-    styles: ["cổ điển", "hiện đại"],
-    code: "CQ-E-012",
-    name: "Lantern Gala",
-    label: "#EVENT #3D",
-  },
-];
-
-// Bỏ dấu tiếng Việt để gõ "hien dai" vẫn tìm ra "hiện đại".
-const norm = (s: string) =>
-  s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/đ/g, "d");
 
 // Mobile GPUs often treat mediump as 16-bit float: the classic
 // fract(sin(x)*43758.) hash overflows there and paints the canvas black.
@@ -120,41 +62,8 @@ function Index() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
-  const [filter, setFilter] = useState("all");
-  const [query, setQuery] = useState("");
-  const [styles, setStyles] = useState<string[]>([]);
   const { session } = useSession();
-  const navigate = useNavigate();
-  const [added, setAdded] = useState<Record<string, string>>({});
-  const onAdd = async (code: string, name: string) => {
-    if (!session) {
-      navigate({ to: "/auth" });
-      return;
-    }
-    try {
-      const r = await addToCart(session.user.id, code, name);
-      setAdded((p) => ({ ...p, [code]: r === "added" ? "✓ ĐÃ THÊM" : "✓ ĐÃ CÓ TRONG GIỎ" }));
-    } catch {
-      setAdded((p) => ({ ...p, [code]: "LỖI — THỬ LẠI" }));
-    }
-  };
-
-  const toggleStyle = (t: string) =>
-    setStyles((prev) =>
-      prev.includes(t) ? prev.filter((s) => s !== t) : [...prev, t]
-    );
-
-  const q = norm(query.trim());
-  const visibleSamples = SAMPLES.filter((s) => {
-    const catOk = filter === "all" || s.tags.split(" ").includes(filter);
-    const styleOk =
-      styles.length === 0 || styles.every((t) => s.styles.includes(t));
-    const qOk =
-      q === "" ||
-      norm(`${s.name} ${s.code} ${s.tags} ${s.styles.join(" ")}`).includes(q);
-    return catOk && styleOk && qOk;
-  });
-
+  const { data: catalog } = useSuspenseQuery(catalogOptions);
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
@@ -428,7 +337,7 @@ function Index() {
         <a href="#policy">POLICY</a>
         <a href="#contact">CONTACT</a>
         {session ? (
-          <Link to="/cart">GIỎ DEMO</Link>
+          <><Link to="/cart">GIỎ DEMO</Link><Link to="/admin">QUẢN LÝ</Link></>
         ) : (
           <Link to="/auth">ĐĂNG NHẬP</Link>
         )}
@@ -491,9 +400,9 @@ function Index() {
             <div className="l">
               <div className="no">
                 <span>CQ-W / 001</span>
-                <span>↗</span>
+                <Link to="/services/$service" params={{ service: "web" }} aria-label="Xem dịch vụ web">↗</Link>
               </div>
-              <h3>WEB</h3>
+              <h3 className="service-name"><Link to="/services/$service" params={{ service: "web" }}>CHÍ QUY <small>(WEBSITE)</small></Link></h3><p className="service-leads">Phụ trách: Nghiên Tân, Biện Thừa Chí</p>
             </div>
             <div className="r">
               <p>
@@ -523,9 +432,9 @@ function Index() {
             <div className="l">
               <div className="no">
                 <span>CQ-V / 001</span>
-                <span>↗</span>
+                <Link to="/services/$service" params={{ service: "video" }} aria-label="Xem dịch vụ video">↗</Link>
               </div>
-              <h3>VIDEO</h3>
+              <h3 className="service-name"><Link to="/services/$service" params={{ service: "video" }}>CHÁNH TRÌ <small>(VIDEO)</small></Link></h3><p className="service-leads">Phụ trách: Kinh Trung</p>
             </div>
             <div className="r">
               <p>Editing, motion, social content, brand film &amp; event recap.</p>
@@ -552,9 +461,9 @@ function Index() {
             <div className="l">
               <div className="no">
                 <span>CQ-E / 001</span>
-                <span>↗</span>
+                <Link to="/services/$service" params={{ service: "event" }} aria-label="Xem dịch vụ event">↗</Link>
               </div>
-              <h3>EVENT</h3>
+              <h3 className="service-name"><Link to="/services/$service" params={{ service: "event" }}>PHONG HƯỞNG <small>(EVENT)</small></Link></h3><p className="service-leads">Phụ trách: Nghiêm Hoằng Chương</p>
             </div>
             <div className="r">
               <p>
@@ -592,75 +501,8 @@ function Index() {
             <span className="o">SOMETHING.</span>
           </h2>
         </div>
-        <div className="searchbar rv">
-          <input
-            type="search"
-            className="search"
-            placeholder="TÌM THEO TÊN / MÃ SỐ — VD: CQ-W-026, NEON…"
-            aria-label="Tìm sample theo tên hoặc mã số"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          {(query || styles.length > 0) && (
-            <button
-              className="filter clear"
-              onClick={() => {
-                setQuery("");
-                setStyles([]);
-              }}
-            >
-              XOÁ ✕
-            </button>
-          )}
-        </div>
-        <div className="filters rv">
-          {FILTERS.map((t) => (
-            <button
-              key={t}
-              className={`filter${filter === t ? " active" : ""}`}
-              data-tag={t}
-              aria-pressed={filter === t}
-              onClick={() => setFilter(t)}
-            >
-              {t === "all" ? "ALL" : `#${t.toUpperCase()}`}
-            </button>
-          ))}
-        </div>
-        <div className="filters styles rv">
-          <span className="mono styles-label">PHONG CÁCH:</span>
-          {STYLE_TAGS.map((t) => (
-            <button
-              key={t}
-              className={`filter style${styles.includes(t) ? " active" : ""}`}
-              aria-pressed={styles.includes(t)}
-              onClick={() => toggleStyle(t)}
-            >
-              {t.toUpperCase()}
-            </button>
-          ))}
-        </div>
-        <div className="rail rv">
-          {visibleSamples.length === 0 && (
-            <p className="mono noresult">
-              KHÔNG THẤY SAMPLE NÀO KHỚP — THỬ TỪ KHOÁ HOẶC TAG KHÁC.
-            </p>
-          )}
-          {visibleSamples.map((s) => (
-            <article key={s.code} className={`sample ${s.cls}`} data-tags={s.tags}>
-              <div className="vis" />
-              <div className="meta">
-                <div className="code">{s.code}</div>
-                <div className="name">{s.name}</div>
-                <div className="tags">
-                  {s.label} · {s.styles.map((t) => `#${t.toUpperCase()}`).join(" ")}
-                </div>
-                <button className="addcart" onClick={() => onAdd(s.code, s.name)}>
-                  {added[s.code] ?? "+ THÊM VÀO GIỎ"}
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
+        <CatalogView samples={catalog.samples}/>
+        <Link className="catalog-more" to="/samples">XEM THÊM — TOÀN BỘ SAMPLES ↗</Link>
       </section>
 
       <section className="section" id="policy">
