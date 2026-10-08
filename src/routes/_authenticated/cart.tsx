@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import "../../chiquy.css";
+import { Button } from "@/components/ui/button";
+import { orderStatuses } from "@/lib/catalog";
 
 export const Route = createFileRoute("/_authenticated/cart")({
   head: () => ({
@@ -26,12 +28,13 @@ type Item = {
   contact_email: string | null;
   offer_price: number | null;
   status: string;
+  processing_status: string;
   submitted_at: string | null;
 };
 
 const itemSchema = z.object({
   facebook_url: z.string().trim().url("Link Facebook không hợp lệ").max(300)
-    .refine((v) => /facebook\.com|fb\.com/i.test(v), "Cần là link tài khoản Facebook"),
+    .refine((v) => { const u = new URL(v); return ["http:", "https:"].includes(u.protocol) && /(^|\.)(facebook\.com|fb\.com)$/i.test(u.hostname); }, "Cần là link tài khoản Facebook"),
   contact_email: z.string().trim().email("Email liên hệ không hợp lệ").max(255),
   offer_price: z.number({ invalid_type_error: "Bắt buộc điền mức giá" }).int().positive("Bắt buộc điền mức giá").max(100_000_000_000),
 });
@@ -48,7 +51,8 @@ function CartPage() {
   const [busy, setBusy] = useState(false);
 
   const load = async () => {
-    const { data } = await supabase.from("demo_requests").select("*").order("created_at", { ascending: false });
+    const { data, error } = await supabase.from("demo_requests").select("*").eq("user_id", user.id).order("created_at", { ascending: false });
+    if (error) setMsg("Không tải được giỏ demo, vui lòng thử lại.");
     setItems((data as Item[]) ?? []);
     setLoading(false);
   };
@@ -66,7 +70,8 @@ function CartPage() {
     }).eq("id", i.id);
 
   const remove = async (id: string) => {
-    await supabase.from("demo_requests").delete().eq("id", id);
+    const { error } = await supabase.from("demo_requests").delete().eq("id", id);
+    if (error) return setMsg("Chưa xoá được demo.");
     setItems((prev) => prev.filter((i) => i.id !== id));
   };
 
@@ -81,16 +86,23 @@ function CartPage() {
     }
     setErrors(errs);
     if (Object.keys(errs).length) return setMsg("Vui lòng điền đủ thông tin cho mỗi demo trước khi gửi.");
+    if (!cart.length || busy) return;
     setBusy(true);
-    for (const i of cart) await save(i);
-    const now = new Date().toISOString();
-    const { error } = await supabase.from("demo_requests")
-      .update({ status: "submitted", submitted_at: now })
-      .in("id", cart.map((i) => i.id));
-    setBusy(false);
-    if (error) return setMsg("Gửi không thành công, vui lòng thử lại.");
-    setMsg("Đã gửi đặt hàng! CHÍ QUY sẽ phản hồi trong vòng 7 ngày.");
-    load();
+    try {
+      const now = new Date().toISOString();
+      for (const i of cart) {
+        const { error } = await save(i);
+        if (error) throw error;
+      }
+      const { error, data } = await supabase.from("demo_requests")
+        .update({ status: "submitted", submitted_at: now })
+        .eq("user_id", user.id).eq("status", "cart")
+        .in("id", cart.map(i => i.id)).select("id");
+      if (error || data?.length !== cart.length) throw error ?? new Error("Gửi chưa đủ đơn");
+      setMsg("Đã Nhận Được Thông Tin — Chờ Phản Hồi Sau 7 Ngày");
+      await load();
+    } catch { setMsg("Gửi không thành công. Demo có thể đã Slot out; vui lòng kiểm tra và thử lại."); }
+    finally { setBusy(false); }
   };
 
   const signOut = async () => {
@@ -102,8 +114,8 @@ function CartPage() {
     <div className="cq-root page">
       <nav className="nav">
         <Link className="logo" to="/">CHÍ QUY®</Link>
-        <Link to="/" hash="archive">← SAMPLES</Link>
-        <button className="link-cq" onClick={signOut}>ĐĂNG XUẤT</button>
+        <Link to="/samples">← SAMPLES</Link><Link to="/admin">QUẢN LÝ</Link>
+        <Button variant="ghost" className="link-cq" onClick={signOut}>ĐĂNG XUẤT</Button>
       </nav>
       <main className="panel wide">
         <span className="kicker">CART / {user.email}</span>
@@ -122,7 +134,7 @@ function CartPage() {
               <div key={i.id} className={`cart-item ${errors[i.id] ? "err" : ""}`}>
                 <div className="cart-head">
                   <div><div className="code">{i.sample_code}</div><div className="name">{i.sample_name}</div></div>
-                  <button className="filter clear" onClick={() => remove(i.id)}>XOÁ ✕</button>
+                  <Button variant="ghost" className="filter clear" onClick={() => remove(i.id)}>XOÁ ✕</Button>
                 </div>
                 <label>Link account Facebook
                   <input className="search" placeholder="https://facebook.com/..." value={i.facebook_url ?? ""}
@@ -145,11 +157,11 @@ function CartPage() {
             ))}
             <div className="cart-total">
               TỔNG ĐỀ XUẤT: {fmt(cart.reduce((s, i) => s + (i.offer_price ?? 0), 0))}
-              <button className="btn-cq" onClick={submit} disabled={busy}>{busy ? "ĐANG GỬI…" : "GỬI ĐẶT HÀNG"}</button>
+              <Button variant="ghost" className="btn-cq" onClick={submit} disabled={busy}>{busy ? "ĐANG GỬI…" : "GỬI ĐẶT HÀNG"}</Button>
             </div>
           </div>
         )}
-        {msg && <p className="note warn">{msg}</p>}
+        {msg && <p className="note warn" role="status">{msg}</p>}
 
         {sent.length > 0 && (
           <>
@@ -161,7 +173,8 @@ function CartPage() {
                     <div><div className="code">{i.sample_code}</div><div className="name">{i.sample_name}</div></div>
                     <div className="code">{i.offer_price ? fmt(i.offer_price) : ""}</div>
                   </div>
-                  <p className="note">Gửi lúc {i.submitted_at ? new Date(i.submitted_at).toLocaleString("vi-VN") : ""} · chờ phản hồi trong 7 ngày</p>
+                  <p className="note">{orderStatuses[i.processing_status] ?? orderStatuses["received"]}</p>
+                   <p className="note">Gửi lúc {i.submitted_at ? new Date(i.submitted_at).toLocaleString("vi-VN") : ""}</p>
                 </div>
               ))}
             </div>

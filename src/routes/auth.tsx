@@ -49,11 +49,13 @@ function AuthPage() {
     if (!parsed.success) return setMsg(parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ");
     setBusy(true);
     if (mode === "up") {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         ...parsed.data,
-        options: { emailRedirectTo: window.location.origin + "/cart" },
+        options: { emailRedirectTo: window.location.origin + "/auth" },
       });
-      setMsg(error ? error.message : "Đã gửi email xác nhận — vui lòng kiểm tra hộp thư để hoàn tất đăng ký.");
+      if (error) setMsg(error.message);
+      else if (data.session) navigate({ to: "/cart" });
+      else setMsg("Tài khoản đã tạo. Vui lòng đăng nhập để tiếp tục.");
     } else {
       const { error } = await supabase.auth.signInWithPassword(parsed.data);
       if (error) setMsg("Sai email hoặc mật khẩu, hoặc tài khoản chưa xác nhận email.");
