@@ -8,6 +8,13 @@
       "when": 1791432366588,
       "tag": "0000_catalog_admin_orders",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791432429712,
+      "tag": "0001_sample_media_access",
+      "breakpoints": true
     }
   ]
 }

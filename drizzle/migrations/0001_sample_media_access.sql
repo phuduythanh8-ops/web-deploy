@@ -1,0 +1,5 @@
+CREATE POLICY "Public published sample media" ON storage.objects FOR SELECT TO anon,authenticated USING(bucket_id='sample-media' AND EXISTS(SELECT 1 FROM public.samples WHERE image_url=name AND published));
+CREATE POLICY "Admin sample media read" ON storage.objects FOR SELECT TO authenticated USING(bucket_id='sample-media' AND public.has_role(auth.uid(),'admin'));
+CREATE POLICY "Admin sample media insert" ON storage.objects FOR INSERT TO authenticated WITH CHECK(bucket_id='sample-media' AND public.has_role(auth.uid(),'admin'));
+CREATE POLICY "Admin sample media update" ON storage.objects FOR UPDATE TO authenticated USING(bucket_id='sample-media' AND public.has_role(auth.uid(),'admin')) WITH CHECK(bucket_id='sample-media' AND public.has_role(auth.uid(),'admin'));
+CREATE POLICY "Admin sample media delete" ON storage.objects FOR DELETE TO authenticated USING(bucket_id='sample-media' AND public.has_role(auth.uid(),'admin'));
