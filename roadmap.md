@@ -1,4 +1,7 @@
 # Requested work
+- [ ] Add website pricing and update the homepage website prices.
+- [ ] Place supplied general, website, event and demo policies on the corresponding pages.
+- [ ] Verify pricing, policy display and navigation.
 - [x] Immediate member signup and durable order confirmation.
 - [x] Secure admin access for the designated account; order processing and sample publishing.
 - [x] Public service catalogs and full sample archive, service names and leads.

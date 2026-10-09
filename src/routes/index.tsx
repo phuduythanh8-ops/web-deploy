@@ -4,6 +4,7 @@ import { useSession } from "@/lib/cart";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { catalogOptions } from "@/lib/catalog";
 import { CatalogView, CatalogError } from "@/components/catalog-view";
+import { websitePrices } from "@/lib/service-content";
 import "../chiquy.css";
 
 export const Route = createFileRoute("/")({
@@ -410,21 +411,8 @@ function Index() {
                 &amp; vibe coding.
               </p>
               <div>
-                <div className="price">
-                  <span>01</span>
-                  <strong>Landing Page</strong>
-                  <span>from 3.5M</span>
-                </div>
-                <div className="price">
-                  <span>02</span>
-                  <strong>Business Web</strong>
-                  <span>from 7M</span>
-                </div>
-                <div className="price">
-                  <span>03</span>
-                  <strong>Custom Build</strong>
-                  <span>quote</span>
-                </div>
+                {websitePrices.map((p, i) => <div className="price website-summary-price" key={p.name}><span>0{i + 1}</span><strong>{p.name}</strong><span>{p.price}</span></div>)}
+                <Link to="/services/$service" params={{ service: "web" }} className="catalog-more">BẢNG GIÁ & QUY ĐỊNH ↗</Link>
               </div>
             </div>
           </article>
@@ -549,11 +537,11 @@ function Index() {
               <em>04</em>Delivery
             </summary>
             <p>
-              File bàn giao, source và quyền sử dụng được quy định theo từng
-              dịch vụ.
+              Bàn giao sản phẩm hoàn chỉnh và quyền sử dụng theo thỏa thuận; website có hệ thống quản trị sẽ được bàn giao cùng website. Không mặc định bàn giao mã nguồn hoặc tài nguyên phát triển nội bộ.
             </p>
           </details>
         </div>
+        <Link className="catalog-more" to="/policies">XEM QUY ĐỊNH CHUNG ↗</Link>
       </section>
 
       <section className="section contact" id="contact">

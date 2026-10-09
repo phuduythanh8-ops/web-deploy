@@ -1,0 +1,48 @@
+QUY ĐỊNH CHUNG - CHÍ QUY
+
+- Thời gian hoạt động: 8 giờ sáng đến 22 giờ tối.
+- Ngày hoạt động: Thứ hai đến sáng thứ bảy.
+1. Phạm vi dịch vụ
+Dịch vụ được thực hiện theo nội dung, yêu cầu và phạm vi đã thống nhất trước khi bắt đầu.
+Mỗi đơn hàng có phạm vi công việc riêng. Các yêu cầu phát sinh ngoài phạm vi ban đầu có thể được báo giá bổ sung.
+2. Nội dung khách hàng cung cấp
+Khách hàng có trách nhiệm cung cấp đầy đủ nội dung cần thiết như văn bản, hình ảnh, video, logo, thông tin sự kiện, thông tin sản phẩm và các tài liệu liên quan.
+Khách hàng chịu trách nhiệm về tính chính xác và quyền sử dụng đối với nội dung do mình cung cấp.
+3. Chỉnh sửa
+Sản phẩm được chỉnh sửa trong phạm vi yêu cầu đã thống nhất.
+Các thay đổi lớn về ý tưởng, bố cục, nội dung hoặc yêu cầu mới sau khi sản phẩm đã được thực hiện có thể được tính là yêu cầu phát sinh.
+Số lần chỉnh sửa cụ thể có thể được quy định riêng cho từng dịch vụ hoặc từng đơn hàng.
+4. Thời gian thực hiện
+Thời gian hoàn thành được tính từ khi đã nhận đủ thông tin, tài nguyên và các yêu cầu cần thiết từ khách hàng.
+Nếu khách hàng chậm cung cấp thông tin, phản hồi hoặc xác nhận, thời gian hoàn thành có thể được điều chỉnh tương ứng.
+5. Thanh toán
+Chi phí dịch vụ được thống nhất trước khi thực hiện.
+Đối với các đơn hàng có chi phí hoặc khối lượng công việc lớn, có thể yêu cầu thanh toán trước một phần hoặc toàn bộ chi phí.
+Các khoản phát sinh chỉ được thực hiện sau khi khách hàng được thông báo và đồng ý.
+6. Bàn giao
+Sau khi hoàn thành và thanh toán theo thỏa thuận, khách hàng được bàn giao sản phẩm theo đúng phạm vi dịch vụ.
+Đối với website, bàn giao website đã hoàn thiện và hệ thống quản trị trên website nếu có.
+Đối với video, bàn giao video thành phẩm theo định dạng đã thống nhất.
+Đối với dịch vụ sự kiện, bàn giao các hạng mục thuộc phạm vi đã thống nhất.
+Không mặc định bàn giao mã nguồn, file dự án, file gốc hoặc các tài nguyên phát triển nội bộ, trừ khi hai bên có thỏa thuận riêng.
+7. Tài nguyên và bản quyền
+Khách hàng chịu trách nhiệm về quyền sử dụng đối với các tài nguyên do khách hàng cung cấp.
+8. Website và dịch vụ bên thứ ba
+Tên miền, hosting, máy chủ, API, lưu trữ, email, SMS, cổng thanh toán và các dịch vụ bên thứ ba không mặc định nằm trong giá xây dựng website.
+Nếu cần sử dụng, chi phí và cách duy trì các dịch vụ này sẽ được thông báo riêng.
+9. Sự kiện
+Đối với dịch vụ liên quan đến sự kiện, khách hàng có trách nhiệm cung cấp chính xác thời gian, địa điểm, nội dung chương trình và các thông tin liên quan.
+Các thay đổi về thời gian, địa điểm, quy mô hoặc nội dung sự kiện sau khi đã triển khai có thể phát sinh thêm chi phí.
+Các chi phí thực tế khác hoặc các dịch vụ bên thứ ba không mặc định nằm trong phí dịch vụ nếu chưa được thỏa thuận.
+10. Hủy đơn và thay đổi yêu cầu
+Nếu khách hàng thay đổi hoặc hủy yêu cầu sau khi công việc đã được bắt đầu, chi phí đã phát sinh có thể không được hoàn lại tùy theo mức độ công việc đã thực hiện.
+Trường hợp thay đổi phạm vi công việc, hai bên sẽ thống nhất lại chi phí và thời gian trước khi tiếp tục.
+11. Nghiệm thu
+Sản phẩm được xem là hoàn thành khi đáp ứng các yêu cầu đã thống nhất ban đầu.
+Khách hàng có trách nhiệm kiểm tra và phản hồi trong thời gian hợp lý sau khi nhận sản phẩm.
+Các yêu cầu mới sau khi sản phẩm đã được nghiệm thu sẽ được xem là yêu cầu mới.
+12. Trách nhiệm của hai bên
+Bên cung cấp chịu trách nhiệm thực hiện sản phẩm đúng theo phạm vi đã thống nhất.
+Khách hàng chịu trách nhiệm về thông tin, nội dung, tài liệu và quyền sử dụng các tài nguyên do mình cung cấp.
+Hai bên có trách nhiệm phối hợp, phản hồi và cung cấp thông tin cần thiết để đảm bảo tiến độ thực hiện.
+

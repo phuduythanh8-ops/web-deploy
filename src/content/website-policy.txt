@@ -1,0 +1,448 @@
+QUY TẮC ĐẶT ĐƠN, THỰC HIỆN, BÀN GIAO VÀ SỬ DỤNG DỊCH VỤ WEBSITE - CHÍ QUY
+1. Phạm vi dịch vụ
+Dịch vụ cung cấp website bao gồm nhiều loại website khác nhau, từ website tĩnh đơn giản đến website có chức năng động và trang quản trị.
+Các nhóm website có thể thực hiện gồm:
+Web chủ đề: thiệp mời, vòng quay, phả hệ, trang hiển thị văn bản, trang trình bày nội dung và các công cụ đơn giản.
+Web group: website giới thiệu group, clan, guild, team, cộng đồng, role, thành viên, thành tích, nội quy và nội dung hình ảnh, âm thanh.
+Web sự kiện: website giới thiệu sự kiện, đăng ký tham gia, xác nhận tham dự, thu thập thông tin người truy cập.
+Web giới thiệu: cá nhân, cửa hàng, doanh nghiệp, thương hiệu, tổ chức.
+Web bán hàng: sản phẩm, danh mục, giỏ hàng, đặt hàng và quản lý đơn hàng.
+Web dịch vụ: giới thiệu dịch vụ, đăng ký tư vấn, liên hệ và đặt lịch.
+Web đặt lịch: lựa chọn dịch vụ, ngày, giờ và quản lý lịch.
+Web blog / tin tức: đăng và quản lý bài viết, hình ảnh, video.
+Web portfolio / hồ sơ cá nhân: giới thiệu cá nhân, dự án, sản phẩm và thành tích.
+Web cộng đồng / diễn đàn: thành viên, bài viết, bình luận và các chức năng cộng đồng.
+Web theo yêu cầu: website có công năng riêng được xây dựng theo nhu cầu cụ thể của khách hàng.
+Mỗi website có thể được thực hiện dưới dạng Web tĩnh, Web động hoặc kết hợp Web tĩnh và Web động, tùy theo yêu cầu.
+2. Phân biệt Web tĩnh và Web động
+2.1. Web tĩnh
+Web tĩnh là website chủ yếu dùng để hiển thị nội dung và tạo trải nghiệm cho người truy cập.
+Website có thể bao gồm:
+Văn bản.
+Hình ảnh.
+Video.
+Âm thanh.
+Hiệu ứng.
+Album.
+Bản đồ.
+QR Code.
+Nút liên hệ.
+Form hoặc các tương tác cơ bản tùy phương án triển khai.
+Web tĩnh phù hợp với website giới thiệu, thiệp mời, portfolio, web group, web chủ đề, trang sự kiện đơn giản và các website có nội dung ít thay đổi.
+2.2. Web động
+Web động là website có dữ liệu được xử lý, lưu trữ hoặc quản lý thông qua hệ thống.
+Có thể bao gồm:
+Trang quản trị.
+Đăng nhập.
+Tài khoản.
+Quản lý thành viên.
+Quản lý sản phẩm.
+Quản lý đơn hàng.
+Quản lý bài viết.
+Quản lý lịch.
+Quản lý form.
+Lưu thông tin khách hàng.
+Phân quyền.
+Cơ sở dữ liệu.
+Các chức năng riêng theo yêu cầu.
+Web động phù hợp với website bán hàng, đặt lịch, đăng ký sự kiện, blog, tuyển dụng, cộng đồng và các website cần quản lý dữ liệu.
+2.3. Website kết hợp
+Một website có thể vừa có phần tĩnh vừa có phần động.
+Ví dụ:
+Trang giới thiệu và hình ảnh là phần tĩnh.
+Trang đăng ký sự kiện và quản lý danh sách người tham gia là phần động.
+Do đó, khách hàng không nhất thiết phải chọn toàn bộ website là tĩnh hoặc động.
+3. Quy trình đặt đơn
+Đơn hàng được thực hiện theo các bước cơ bản sau:
+Bước 1: Khách hàng gửi yêu cầu
+Khách hàng cung cấp thông tin về:
+Loại website muốn làm.
+Mục đích sử dụng.
+Nội dung cần có.
+Số lượng trang dự kiến.
+Tính năng mong muốn.
+Hình ảnh, logo, video hoặc tài liệu nếu có.
+Thời gian mong muốn hoàn thành.
+Nếu khách hàng chưa biết nên chọn loại website nào, có thể mô tả nhu cầu bằng ngôn ngữ đơn giản. Dựa trên nhu cầu đó, bên thực hiện sẽ xác định loại website và phạm vi chức năng phù hợp.
+Bước 2: Xác nhận phạm vi
+Hai bên thống nhất:
+Loại website.
+Giao diện.
+Số lượng trang.
+Công năng.
+Tính năng.
+Nội dung.
+Giá.
+Thời gian dự kiến.
+Phạm vi chỉnh sửa.
+Phương thức bàn giao.
+Những nội dung đã thống nhất sẽ được xem là phạm vi của đơn hàng.
+Bước 3: Xác nhận đơn hàng và thanh toán
+Đơn hàng được bắt đầu sau khi khách hàng xác nhận và hoàn thành khoản thanh toán theo thỏa thuận.
+Tùy từng đơn hàng, có thể áp dụng:
+Thanh toán toàn bộ trước khi thực hiện.
+Hoặc chia thành nhiều đợt đối với đơn hàng lớn / phức tạp.
+Đối với website có yêu cầu đặc biệt, việc triển khai chỉ bắt đầu sau khi hai bên thống nhất rõ phạm vi công việc và chi phí.
+Bước 4: Khách hàng cung cấp nội dung
+Khách hàng có trách nhiệm cung cấp những nội dung cần thiết như:
+Tên website.
+Logo.
+Văn bản.
+Hình ảnh.
+Video.
+Âm thanh.
+Thông tin liên hệ.
+Địa chỉ.
+Sản phẩm / dịch vụ.
+Thông tin sự kiện.
+Nội dung form.
+Các dữ liệu khác theo yêu cầu.
+Trường hợp không có đủ, mục đó sẽ điền số 0. Thời gian thực hiện có thể bị ảnh hưởng nếu khách hàng cung cấp nội dung chậm hoặc cung cấp nội dung không đầy đủ.
+Bước 5: Thực hiện website
+Bên thực hiện tiến hành thiết kế và xây dựng website theo phạm vi đã thống nhất.
+Trong quá trình thực hiện, nếu phát sinh yêu cầu ngoài phạm vi ban đầu, hai bên sẽ trao đổi và thống nhất trước khi thực hiện.
+Bước 6: Gửi bản xem trước
+Sau khi website đạt trạng thái có thể kiểm tra, khách hàng được cung cấp đường dẫn xem trước hoặc phương thức kiểm tra phù hợp.
+Khách hàng kiểm tra:
+Nội dung.
+Hình ảnh.
+Bố cục.
+Màu sắc.
+Các chức năng đã đặt.
+Thông tin liên hệ.
+Các lỗi hiển thị nếu có.
+Bước 7: Chỉnh sửa
+Khách hàng được yêu cầu chỉnh sửa những nội dung thuộc phạm vi đơn hàng.
+Các chỉnh sửa nhỏ về:
+Nội dung.
+Hình ảnh.
+Màu sắc.
+Bố cục trong phạm vi thiết kế.
+Thông tin hiển thị.
+có thể được thực hiện trong quá trình hoàn thiện.
+Những yêu cầu làm thay đổi đáng kể thiết kế hoặc chức năng ban đầu có thể được tính là yêu cầu phát sinh.
+Bước 8: Hoàn thiện và bàn giao
+Sau khi website được xác nhận hoàn thành, bên thực hiện tiến hành bàn giao website theo phạm vi đã thỏa thuận.
+4. Thời gian thực hiện dự kiến
+Thời gian dưới đây là thời gian tham khảo. Thời gian thực tế phụ thuộc vào nội dung, số lượng trang, mức độ phức tạp và tốc độ phản hồi của khách hàng.
+Web chủ đề
+Khoảng 3-5 ngày.
+Các website đơn giản như thiệp mời, trang văn bản hoặc trang trình bày có thể hoàn thành nhanh hơn. Các web vòng quay, phả hệ hoặc công cụ có dữ liệu có thể cần thêm thời gian.
+Web group
+Khoảng 7-10 ngày đối với website giới thiệu và trưng bày thông tin.
+Nếu có nhiều thành viên, nhiều nội dung, trang quản trị hoặc chức năng quản lý dữ liệu, thời gian có thể kéo dài hơn.
+Web sự kiện
+Khoảng 5-7 ngày.
+Nếu chỉ giới thiệu sự kiện, thời gian thực hiện thường ngắn hơn. Nếu có form đăng ký, lưu dữ liệu, quản lý danh sách người tham gia hoặc các chức năng riêng, thời gian sẽ tăng theo mức độ phức tạp.
+Web giới thiệu
+Khoảng 3–7 ngày.
+Website nhiều trang, nhiều nội dung hoặc có trang quản trị có thể cần thời gian lâu hơn.
+Web bán hàng
+Khoảng 10-14 ngày.
+Thời gian phụ thuộc vào số lượng sản phẩm, chức năng giỏ hàng, đặt hàng, quản lý đơn, thanh toán và các yêu cầu bổ sung.
+Web dịch vụ
+Khoảng 5-7 ngày.
+Nếu có thêm đặt lịch, quản lý khách hàng hoặc hệ thống riêng, thời gian có thể tăng.
+Web đặt lịch
+Khoảng 5–10 ngày.
+Thời gian phụ thuộc vào cách đặt lịch, số lượng dịch vụ, nhân viên, lịch làm việc, trạng thái lịch và hệ thống quản trị.
+Web blog / tin tức
+Khoảng 7–10 ngày.
+Nếu chỉ có trang bài viết cơ bản thì thời gian ngắn hơn. Nếu có hệ thống quản trị nội dung đầy đủ, tìm kiếm, danh mục, tác giả và các chức năng khác thì cần thêm thời gian.
+Web portfolio
+Khoảng 5–7 ngày.
+Web cộng đồng / diễn đàn
+Khoảng 7–20 ngày hoặc lâu hơn tùy chức năng.
+Nếu có tài khoản, thành viên, bài viết, bình luận, phân quyền và hệ thống dữ liệu, thời gian sẽ được báo riêng.
+Web theo yêu cầu
+Báo thời gian riêng.
+Đối với website có chức năng đặc biệt, hệ thống dữ liệu lớn, nhiều tài khoản, API hoặc quy trình nghiệp vụ riêng, thời gian sẽ được xác định sau khi phân tích yêu cầu.
+5. Trường hợp thời gian hoàn thành có thể thay đổi
+Thời gian dự kiến có thể thay đổi nếu:
+Khách hàng gửi nội dung chậm.
+Nội dung gửi không đầy đủ.
+Khách hàng thay đổi yêu cầu trong quá trình thực hiện.
+Khách hàng yêu cầu thêm trang.
+Khách hàng yêu cầu thêm chức năng.
+Khách hàng thay đổi toàn bộ giao diện.
+Phải chờ dịch vụ bên thứ ba.
+Phát sinh vấn đề kỹ thuật ngoài dự kiến.
+Website có chức năng phức tạp hơn phạm vi ban đầu.
+Thời gian thực hiện được tính dựa trên phạm vi công việc đã thống nhất, không chỉ dựa vào tên loại website.
+6. Quy định về nội dung khách hàng cung cấp
+Khách hàng chịu trách nhiệm về tính chính xác và quyền sử dụng đối với nội dung do mình cung cấp.
+Bao gồm:
+Hình ảnh.
+Logo.
+Văn bản.
+Video.
+Âm thanh.
+Tài liệu.
+Thông tin sản phẩm.
+Thông tin doanh nghiệp.
+Nội dung quảng bá.
+Nội dung của bên thứ ba.
+Khách hàng cần đảm bảo nội dung cung cấp không vi phạm quyền sở hữu trí tuệ, quyền riêng tư hoặc các quyền hợp pháp của bên khác.
+Bên thực hiện không chịu trách nhiệm đối với tranh chấp phát sinh từ nội dung do khách hàng cung cấp nếu nội dung đó được khách hàng yêu cầu đưa lên website.
+7. Quy định về chỉnh sửa
+Trong phạm vi đơn hàng, khách hàng được yêu cầu chỉnh sửa để website hoàn thiện đúng với nội dung và yêu cầu đã thống nhất.
+Tuy nhiên, các trường hợp sau có thể được xem là yêu cầu mới:
+Đổi hoàn toàn giao diện.
+Làm lại toàn bộ website.
+Thêm nhiều trang mới.
+Thêm chức năng mới.
+Thay đổi loại website.
+Chuyển từ web tĩnh sang hệ thống động phức tạp.
+Thêm hệ thống tài khoản.
+Thêm hệ thống quản trị mới.
+Thêm thanh toán.
+Thêm API.
+Thêm cơ sở dữ liệu hoặc nghiệp vụ mới.
+Các yêu cầu phát sinh sẽ được trao đổi về chi phí và thời gian trước khi thực hiện.
+8. Quy định về bàn giao
+Sau khi website hoàn thành, khách hàng được bàn giao những nội dung thuộc phạm vi dịch vụ đã thỏa thuận.
+Thông thường có thể bao gồm:
+Đường dẫn website.
+Website đã hoàn thiện.
+Quyền sử dụng website theo thỏa thuận.
+Tài khoản quản trị nếu đơn hàng có trang quản trị.
+Quyền quản lý nội dung nếu website hỗ trợ chức năng này.
+Thông tin cần thiết để khách hàng sử dụng các chức năng được bàn giao.
+Đối với website có trang quản trị, khách hàng có thể được cấp quyền quản trị phù hợp với phạm vi dịch vụ.
+9. Những nội dung không thuộc phạm vi bàn giao
+Việc bàn giao website không đồng nghĩa với việc chuyển giao toàn bộ mã nguồn và hệ thống kỹ thuật phía sau website.
+Khách hàng nhận website để sử dụng và quyền quản trị theo phạm vi thỏa thuận, không mặc nhiên nhận toàn bộ hệ thống kỹ thuật dùng để tạo ra website.
+10. Quyền quản trị website
+Nếu đơn hàng có trang quản trị, khách hàng được cấp quyền quản trị theo chức năng đã thỏa thuận.
+Quyền quản trị có thể cho phép khách hàng:
+Thay đổi nội dung.
+Thêm hình ảnh.
+Sửa bài viết.
+Quản lý sản phẩm.
+Quản lý đơn hàng.
+Quản lý form.
+Quản lý thành viên.
+Quản lý lịch.
+Thực hiện các thao tác khác mà hệ thống hỗ trợ.
+Quyền quản trị website không đồng nghĩa với quyền truy cập hoặc sở hữu toàn bộ mã nguồn và hệ thống kỹ thuật phía sau.
+11. Quy định về sao chép website
+Website được tạo ra từ công sức thiết kế, nội dung trình bày, ý tưởng triển khai và hệ thống kỹ thuật của bên thực hiện.
+Khách hàng được quyền sử dụng website đã mua cho mục đích đã thỏa thuận.
+Khách hàng không được tự ý:
+Sao chép toàn bộ website để tạo website khác.
+Bán lại website như sản phẩm của mình.
+Phân phối website cho người khác.
+Dùng website đã nhận làm mẫu để tạo hàng loạt website thương mại khác.
+Sao chép thiết kế đặc thù của dự án để cạnh tranh hoặc cung cấp cho bên thứ ba.
+Cung cấp mã nguồn hoặc tài nguyên kỹ thuật cho bên khác để tái tạo sản phẩm nếu những tài nguyên đó không thuộc phạm vi bàn giao.
+Các website cùng loại có thể có một số điểm tương đồng về bố cục và công năng. Ví dụ, website bán hàng thường có trang sản phẩm, giỏ hàng và đặt hàng; website doanh nghiệp thường có giới thiệu, dịch vụ và liên hệ.
+Sự tương đồng về những thành phần phổ biến của một loại website không được mặc nhiên xem là sao chép.
+12. Quy định về mức độ tương đồng
+Đối với những website được xây dựng cùng một loại hoặc cùng mục đích, một số thành phần có thể tương đồng do đặc điểm chung của loại website.
+Ví dụ:
+Hai website bán hàng đều có thể có trang chủ, danh mục sản phẩm, trang sản phẩm, giỏ hàng và đặt hàng.
+Tuy nhiên, mỗi website sẽ được triển khai dựa trên:
+Nội dung riêng.
+Hình ảnh riêng.
+Logo riêng.
+Màu sắc riêng.
+Thương hiệu riêng.
+Bố cục theo yêu cầu.
+Cách trình bày riêng.
+Công năng riêng.
+Mốc 40%, nếu được sử dụng, chỉ nên xem là nguyên tắc tham khảo nhằm hạn chế việc sao chép nguyên mẫu. Đây không phải tiêu chí duy nhất để xác định một website có phải bản sao hay không.
+13. Quyền sử dụng lại hệ thống và thành phần kỹ thuật
+Bên thực hiện có quyền tiếp tục sử dụng các thành phần kỹ thuật và thiết kế mang tính hệ thống do mình tự xây dựng cho các dự án khác.
+Các thành phần này có thể bao gồm:
+Cấu trúc kỹ thuật chung.
+Thành phần giao diện dùng chung.
+Cách xây dựng hệ thống.
+Framework.
+Thư viện.
+Module.
+Công cụ quản trị.
+Quy trình xử lý.
+Các giải pháp kỹ thuật.
+Template cơ sở.
+Các thành phần được xây dựng trước đó.
+Điều này không có nghĩa là bên thực hiện được quyền sử dụng nội dung riêng của khách hàng như logo, hình ảnh, dữ liệu cá nhân hoặc nội dung độc quyền của khách hàng cho mục đích khác nếu không có quyền sử dụng.
+14. Bảo hành và hỗ trợ sau bàn giao
+Sau khi bàn giao, bên thực hiện hỗ trợ đối với các lỗi thuộc phạm vi website đã xây dựng trong thời gian bảo hành theo thỏa thuận của đơn hàng.
+Các lỗi có thể được hỗ trợ gồm:
+Chức năng đã thỏa thuận không hoạt động đúng.
+Lỗi hiển thị do quá trình xây dựng.
+Lỗi xử lý dữ liệu thuộc phạm vi hệ thống.
+Lỗi phát sinh trực tiếp từ phần website do bên thực hiện xây dựng.
+Bảo hành không bao gồm:
+Khách hàng tự ý thay đổi hệ thống.
+Bên thứ ba can thiệp vào website.
+Thay đổi máy chủ hoặc môi trường chạy website.
+Sử dụng sai chức năng.
+Xóa hoặc sửa dữ liệu gây lỗi.
+Dịch vụ bên thứ ba ngừng hoạt động.
+Thay đổi API của bên thứ ba.
+Yêu cầu thêm chức năng mới.
+Thay đổi thiết kế.
+Thay đổi nội dung thông thường.
+Các công việc ngoài phạm vi bảo hành có thể được báo giá riêng.
+15. Trách nhiệm của khách hàng
+Khách hàng có trách nhiệm:
+Cung cấp thông tin chính xác.
+Cung cấp nội dung đúng thời hạn.
+Kiểm tra website trong giai đoạn xem trước.
+Phản hồi các vấn đề cần chỉnh sửa.
+Bảo quản tài khoản quản trị được bàn giao.
+Không chia sẻ tài khoản quản trị cho người không có quyền.
+Không tự ý can thiệp vào hệ thống kỹ thuật nếu không hiểu rõ.
+Thanh toán đúng theo thỏa thuận.
+16. Trách nhiệm của bên thực hiện
+Bên thực hiện có trách nhiệm:
+Thực hiện website theo phạm vi đã thống nhất.
+Đảm bảo các chức năng đã thỏa thuận được triển khai đúng mục đích.
+Thông báo khi có vấn đề ảnh hưởng đến tiến độ.
+Hỗ trợ khách hàng kiểm tra website trước khi bàn giao.
+Bàn giao quyền sử dụng và quyền quản trị theo thỏa thuận.
+Hỗ trợ xử lý lỗi thuộc phạm vi bảo hành.
+Bên thực hiện không có trách nhiệm thực hiện miễn phí những chức năng hoặc yêu cầu không nằm trong đơn hàng ban đầu.
+17. Các yêu cầu phát sinh
+Nếu khách hàng muốn bổ sung chức năng sau khi đã xác nhận đơn hàng, yêu cầu mới sẽ được xem xét riêng.
+Ví dụ:
+Ban đầu đặt website giới thiệu → sau đó yêu cầu thêm bán hàng.
+Hoặc:
+Ban đầu làm web sự kiện → sau đó yêu cầu thêm tài khoản thành viên và hệ thống quản lý.
+Hoặc:
+Ban đầu làm web tĩnh → sau đó yêu cầu chuyển thành web động có cơ sở dữ liệu và trang quản trị.
+Các trường hợp trên có thể phát sinh thêm chi phí và thời gian. Chi phí phát sinh sẽ được thông báo trước khi thực hiện.
+18. Những điều khách hàng cần kiểm tra trước khi đặt đơn
+Trước khi đặt đơn, khách hàng nên xác định:
+Website dùng để làm gì?
+Khách truy cập cần làm gì trên website?
+Website chỉ để xem thông tin hay cần nhập dữ liệu?
+Có cần trang quản trị không?
+Có cần lưu dữ liệu không?
+Có cần kết nối dịch vụ bên ngoài không?
+Có cần cập nhật nội dung thường xuyên không?
+Việc xác định rõ những nội dung này giúp lựa chọn đúng loại website và hạn chế phát sinh trong quá trình thực hiện.
+19. Một số lưu ý quan trọng
+Website được thực hiện dựa trên phạm vi công việc đã thống nhất tại thời điểm đặt đơn.
+Tên loại website không quyết định toàn bộ giá thành. Giá phụ thuộc vào công năng, số lượng trang, tính năng và mức độ phức tạp.
+Web tĩnh không có nghĩa là website kém chất lượng. Web tĩnh phù hợp với nhu cầu chủ yếu là trình bày thông tin và có thể có giao diện, hình ảnh, video, âm thanh và hiệu ứng đầy đủ.
+Web động không có nghĩa là tất cả tính năng đều được bao gồm. Các chức năng như tài khoản, quản lý dữ liệu, đặt lịch, thanh toán, API hoặc phân quyền cần được xác định cụ thể.
+Trang quản trị chỉ có những chức năng đã được xây dựng và thỏa thuận. Việc có trang quản trị không đồng nghĩa với việc khách hàng có quyền chỉnh sửa mọi thành phần kỹ thuật của website.
+Thời gian hoàn thành là thời gian dự kiến. Thời gian có thể thay đổi khi phạm vi công việc thay đổi hoặc khách hàng chậm cung cấp nội dung.
+Bàn giao website không đồng nghĩa với bàn giao mã nguồn. Khách hàng được sử dụng website và nhận quyền quản trị theo đúng phạm vi dịch vụ đã thỏa thuận.
+Yêu cầu mới sau khi hoàn thành có thể được tính phí riêng.
+20. Xác nhận đơn hàng
+Khi khách hàng xác nhận đặt hàng, khách hàng được xem là đã đồng ý với:
+Loại website.
+Phạm vi công việc.
+Các tính năng.
+Nội dung bàn giao.
+Thời gian dự kiến.
+Chi phí.
+Quy định chỉnh sửa.
+Quy định về mã nguồn và hệ thống kỹ thuật.
+Quy định sử dụng website.
+Quy định về các yêu cầu phát sinh.
+Quy định bảo hành và hỗ trợ.
+Các nội dung đặc biệt hoặc khác với quy định chung sẽ được ghi rõ trong thỏa thuận riêng của từng đơn hàng.
+21. Nguyên tắc chung
+Mục tiêu của quy định là giúp hai bên hiểu rõ khách hàng mua gì, được bàn giao gì, sử dụng như thế nào, thời gian thực hiện bao lâu và những nội dung nào được xem là phát sinh.
+Mỗi đơn hàng có thể có yêu cầu khác nhau. Vì vậy, những nội dung cụ thể được hai bên xác nhận cho từng đơn hàng sẽ được ưu tiên áp dụng đối với đơn hàng đó.
+
+
+QUY ĐỊNH NHẬN & HOÀN ĐƠN
+1. Thời hạn bảo hành
+Website được bảo hành trong thời hạn 30 ngày kể từ ngày bàn giao.
+Thời điểm bắt đầu bảo hành được tính từ ngày:
+Website được xác nhận đã hoàn thành và bàn giao cho khách hàng; hoặc
+Khách hàng được cấp quyền quản trị và quyền sử dụng website; hoặc
+Hai bên xác nhận hoàn tất đơn hàng.
+Tùy từng đơn hàng, nếu có thời hạn bảo hành khác với quy định trên, thời hạn cụ thể sẽ được ghi rõ khi xác nhận đơn hàng.
+Nếu không có thỏa thuận riêng, thời hạn mặc định là 30 ngày.
+2. Nội dung được bảo hành
+Trong thời gian bảo hành, bên thực hiện hỗ trợ kiểm tra và sửa các lỗi phát sinh thuộc phạm vi website đã xây dựng.
+Các trường hợp được bảo hành gồm:
+Chức năng đã thỏa thuận nhưng không hoạt động đúng.
+Chức năng bị lỗi do quá trình xây dựng.
+Lỗi hiển thị do quá trình xây dựng website.
+Lỗi xử lý dữ liệu thuộc phạm vi hệ thống đã xây dựng.
+Lỗi liên kết hoặc xử lý chức năng đã được xác nhận trong đơn hàng.
+Các lỗi kỹ thuật khác được xác định là do phần website do bên thực hiện xây dựng.
+Việc bảo hành nhằm sửa lỗi của sản phẩm đã bàn giao, không bao gồm việc bổ sung hoặc phát triển thêm chức năng mới.
+3. Thời gian xử lý bảo hành
+Sau khi khách hàng thông báo lỗi, bên thực hiện sẽ kiểm tra và xác định nguyên nhân.
+Nếu lỗi thuộc phạm vi bảo hành, bên thực hiện sẽ tiến hành xử lý trong thời gian phù hợp với mức độ lỗi.
+Các lỗi đơn giản có thể được xử lý nhanh hơn. Các lỗi phức tạp hoặc liên quan đến hệ thống bên thứ ba có thể cần thêm thời gian để kiểm tra.
+Thời gian xử lý bảo hành không được tính là thời gian phát triển chức năng mới.
+4. Những trường hợp không thuộc bảo hành
+Bảo hành không áp dụng đối với:
+Khách hàng tự ý chỉnh sửa hệ thống.
+Khách hàng hoặc bên thứ ba can thiệp vào mã nguồn hoặc hệ thống kỹ thuật.
+Khách hàng tự thay đổi cấu hình máy chủ.
+Khách hàng xóa, sửa hoặc làm hỏng dữ liệu.
+Website được chuyển sang máy chủ hoặc môi trường khác không phù hợp.
+Lỗi do dịch vụ bên thứ ba ngừng hoạt động.
+Lỗi do API hoặc hệ thống bên ngoài thay đổi.
+Lỗi do tài khoản, mật khẩu hoặc quyền truy cập bị thay đổi bởi khách hàng hoặc bên thứ ba.
+Lỗi phát sinh do khách hàng sử dụng sai chức năng.
+Yêu cầu thay đổi giao diện.
+Yêu cầu thay đổi nội dung.
+Yêu cầu thêm trang.
+Yêu cầu thêm chức năng.
+Yêu cầu nâng cấp hệ thống.
+Yêu cầu thay đổi cách hoạt động của website.
+Các yêu cầu không có trong phạm vi đơn hàng ban đầu.
+Các trường hợp trên có thể được hỗ trợ theo hình thức dịch vụ sửa chữa, nâng cấp hoặc phát triển thêm và có thể phát sinh chi phí.
+5. Hết thời hạn bảo hành
+Sau khi hết thời hạn 30 ngày, đơn hàng được xem là kết thúc thời gian bảo hành.
+Các lỗi mới phát sinh sau thời hạn bảo hành không mặc nhiên được sửa miễn phí.
+Nếu khách hàng cần tiếp tục hỗ trợ, có thể sử dụng dịch vụ:
+Sửa lỗi website.
+Bảo trì website.
+Cập nhật nội dung.
+Thêm chức năng.
+Nâng cấp website.
+Quản lý website theo tháng.
+Hỗ trợ kỹ thuật theo từng yêu cầu.
+Chi phí sẽ được xác định tùy theo nội dung công việc.
+6. Bảo hành không làm thay đổi phạm vi bàn giao
+Thời hạn bảo hành chỉ áp dụng cho website và các chức năng thuộc phạm vi đơn hàng.
+Việc bảo hành không có nghĩa là khách hàng được nhận thêm:
+Mã nguồn.
+Source code.
+Backend code.
+Cơ sở dữ liệu gốc.
+Công cụ kỹ thuật nội bộ.
+Template hệ thống.
+API key hoặc secret key.
+Tài khoản hệ thống nội bộ.
+Các tài nguyên kỹ thuật không thuộc phạm vi bàn giao.
+Bảo hành chỉ là cam kết hỗ trợ xử lý lỗi thuộc phạm vi sản phẩm đã bàn giao.
+7. Quy định đối với website đã bàn giao
+Sau khi nhận bàn giao, khách hàng có trách nhiệm bảo quản:
+Tài khoản quản trị.
+Mật khẩu.
+Quyền truy cập.
+Dữ liệu.
+Nội dung website.
+Khách hàng nên thông báo cho bên thực hiện trước khi thực hiện các thay đổi kỹ thuật có thể ảnh hưởng đến website.
+Nếu khách hàng hoặc bên thứ ba tự ý can thiệp vào hệ thống và gây ra lỗi, lỗi đó có thể không còn thuộc phạm vi bảo hành.
+8. Thời hạn bảo hành theo từng đơn hàng
+Mặc định:
+Thời hạn bảo hành: 30 ngày kể từ ngày bàn giao website.
+Đối với các đơn hàng đặc biệt, hai bên có thể thỏa thuận thời hạn khác, ví dụ:
+7 ngày.
+15 ngày.
+30 ngày.
+60 ngày.
+90 ngày.
+Thời hạn nào được ghi rõ trong xác nhận đơn hàng thì thời hạn đó được áp dụng cho đơn hàng tương ứng.
+Nếu đơn hàng không ghi thời hạn bảo hành riêng thì áp dụng 30 ngày.
+9. Nguyên tắc bảo hành
+Bảo hành được áp dụng theo nguyên tắc:
+Lỗi của website đã xây dựng → được hỗ trợ xử lý trong thời hạn bảo hành.
+Yêu cầu mới → không thuộc bảo hành.
+Khách hàng tự thay đổi hoặc bên thứ ba can thiệp gây lỗi → không mặc nhiên thuộc bảo hành.
+Dịch vụ bên ngoài gặp sự cố → không mặc nhiên được xem là lỗi của website.
+Hết thời hạn bảo hành → hỗ trợ tiếp theo được thực hiện theo dịch vụ sửa chữa, bảo trì hoặc phát triển có thể tính phí.

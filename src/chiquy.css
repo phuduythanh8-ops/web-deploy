@@ -149,6 +149,24 @@ color:var(--fg);font-family:var(--sans);overflow-x:hidden;min-height:100vh}
 .cq-root .contact-link{overflow-wrap:anywhere}
 .cq-root .editor-form .search{border-radius:6px;width:100%}
 .cq-root .catalog-page .btn-cq{align-self:flex-start}
+.cq-root .pricing-row{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:24px;padding:28px 0;border-top:1px solid var(--line);align-items:start}
+.cq-root .pricing-row h3{font-size:24px;line-height:1.3;margin:0 0 12px;letter-spacing:0}
+.cq-root .pricing-row p,.cq-root .pricing-notes p{font-size:16px;line-height:1.7;margin:8px 0;max-width:780px}
+.cq-root .pricing-examples{opacity:.75}
+.cq-root .pricing-amount{font:500 18px var(--mono);color:var(--lime);white-space:nowrap}
+.cq-root .pricing-notes{padding:24px 0;border-block:1px solid var(--line)}
+.cq-root .pricing-notes h3{font:14px var(--mono);color:var(--lime)}
+.cq-root .policy-content{margin-top:24px;max-width:1000px}
+.cq-root .policy-content summary{font-size:20px;line-height:1.5;letter-spacing:0;gap:16px;padding:20px 0;overflow-wrap:anywhere}
+.cq-root .policy-content summary:after{flex-shrink:0}
+.cq-root .policy-body{padding:0 0 24px}
+.cq-root .policy-body p{font-size:16px;line-height:1.75;margin:8px 0;padding:0;max-width:850px;white-space:normal}
+.cq-root .policy-body h3{font-size:17px;line-height:1.6;margin:24px 0 12px;letter-spacing:0}
+.cq-root .policy-links{display:flex;gap:24px;flex-wrap:wrap}
+.cq-root .card .website-summary-price{grid-template-columns:24px minmax(0,1fr) auto;gap:10px}
+.cq-root .website-summary-price strong{font-size:16px;letter-spacing:0}
+.cq-root .website-summary-price>span:last-child{font-size:11px;white-space:nowrap}
+@media(max-width:600px){.cq-root .pricing-row{grid-template-columns:24px minmax(0,1fr);gap:12px}.cq-root .pricing-amount{grid-column:2;grid-row:2;white-space:normal}.cq-root .pricing-row h3{font-size:22px}.cq-root .policy-content summary{font-size:18px}.cq-root .card .website-summary-price{grid-template-columns:20px minmax(0,1fr)}.cq-root .website-summary-price>span:last-child{grid-column:2}}
 .cq-root .nav{flex-wrap:wrap;justify-content:center;width:max-content}
 @media(max-width:1000px){.cq-root .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.cq-root .catalog-grid,.cq-root .editor-grid{grid-template-columns:1fr}.cq-root .catalog-page{padding:130px 18px 60px}.cq-root .catalog-title{font-size:40px}.cq-root .card h3.service-name{font-size:44px}.cq-root .card{padding:24px}.cq-root .management-row{align-items:flex-start;flex-direction:column}.cq-root .cart-head{flex-wrap:wrap}.cq-root .nav{padding-left:8px;gap:2px}.cq-root .nav a:not(.logo){padding:7px 6px}}

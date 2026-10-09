@@ -12,3 +12,5 @@
 - Catalog and service policies live in public samples/services tables; public reads use a server function and shared query options so all storefronts reflect admin edits.
 - Admin rights live only in user_roles and are verified through authenticated server calls and RLS; initial designated-admin claiming requires a verified Google identity because email signup auto-confirms unverified addresses.
 - Order lifecycle keeps cart|submitted separate from processing_status; validation triggers protect required fields and admin-only changes.
+- Owner-supplied policy documents are bundled as defaults only for the exact original provisional service copy; admin editors use the same resolver and saved custom policies take precedence, preventing overwrites.
+- Website pricing is shared between the homepage summary and service-page details to keep both displays consistent; general terms have a dedicated public route and demo terms live on the sample catalog.

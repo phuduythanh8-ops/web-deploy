@@ -1,0 +1,287 @@
+PHONG HƯỞNG - SỰ KIỆN
+
+1. PHẠM VI DỊCH VỤ
+Mảng Sự kiện của Chí Quy do page Phong Hưởng phụ trách, tập trung vào việc cung cấp ý tưởng, concept, kế hoạch sự kiện và tư vấn truyền thông dành cho các cá nhân, page hoặc group có nhu cầu.
+Sự kiện được xây dựng dựa trên nhu cầu thực tế của từng group, có thể phát triển theo nhiều chủ đề như:
+·       Cổ trang.
+·       Linh dị.
+·       Cung đình.
+·       Giang hồ.
+·       Lễ hội.
+·       Điều tra.
+·       Các chủ đề khác theo brief của khách hàng.
+Phong Hưởng không mặc định trực tiếp vận hành sự kiện cho khách hàng.
+Các công việc như:
+·       Đăng bài.
+·       Quản lý người tham gia.
+·       Điều hành.
+·       Chấm điểm.
+·       Tổng hợp kết quả.
+·       Trao thưởng.
+·       Xử lý tranh chấp.
+thuộc trách nhiệm của khách hàng hoặc đơn vị tổ chức.
+Trường hợp khách hàng có nhu cầu hỗ trợ triển khai hoặc vận hành, nội dung này được xem là một hạng mục dịch vụ riêng và cần được thỏa thuận trước.
+2. CÁC HẠNG MỤC DỊCH VỤ
+Khách hàng có thể lựa chọn đặt riêng từng hạng mục hoặc kết hợp thành một gói dịch vụ.
+2.1. Ý tưởng
+Có thể bao gồm:
+·       Tên và concept sự kiện.
+·       Chủ đề, bối cảnh hoặc cốt truyện.
+·       Ý tưởng minigame.
+·       Ý tưởng nhiệm vụ.
+·       Ý tưởng bình chọn.
+·       Cơ chế tương tác.
+·       Cơ chế tính điểm.
+·       Vật phẩm, phần thưởng, thành tích.
+Khách hàng có thể cung cấp ý tưởng có sẵn để Phong Hưởng phát triển hoặc yêu cầu xây dựng ý tưởng riêng theo brief.
+2.2. Kế hoạch
+Kế hoạch sự kiện có thể bao gồm 01 file Word và 01 file Excel, tùy phạm vi đơn hàng.
+Nội dung có thể gồm:
+·       Concept sự kiện.
+·       Mục tiêu.
+·       Nội dung cụ thể.
+·       Cơ chế.
+·       Thể lệ.
+·       Timeline.
+·       Phương thức vận hành.
+·       Phần thưởng.
+·       Nội dung truyền thông.
+Phần thưởng có thể do khách hàng cung cấp thông tin hoặc Phong Hưởng hỗ trợ gợi ý.
+2.3. Tư vấn truyền thông
+Có thể bao gồm:
+·      Xác định mục tiêu.
+·      Phân chia giai đoạn trước – trong – sau sự kiện.
+·      Lên lịch và định hướng nội dung.
+·      Xây dựng hoạt động tương tác.
+·      Ý tưởng thu hút người tham gia.
+·      Định hướng hình ảnh và nhận diện.
+·      Định hướng giải quyết các vấn đề phát sinh hoặc tranh chấp trong quá trình tổ chức sự kiện.
+Phong Hưởng không chịu trách nhiệm thay khách hàng đưa ra quyết định cuối cùng hoặc trực tiếp giải quyết tranh chấp, trừ trường hợp có thỏa thuận về dịch vụ vận hành riêng.
+LƯU Ý:
+Không mặc định mọi đơn hàng đều bao gồm toàn bộ các hạng mục trên.
+Khách hàng có thể lựa chọn từng hạng mục hoặc kết hợp thành gói dịch vụ.
+Ví dụ:
+·       Mua riêng concept.
+·       Mua kế hoạch sự kiện.
+·       Mua gói concept + kế hoạch.
+·       Đặt thiết kế sự kiện riêng theo brief.
+·       Đặt thêm tư vấn truyền thông.
+3. QUY TRÌNH ĐẶT ĐƠN
+Quy trình đặt đơn được thực hiện theo các bước:
+3.1. Tiếp nhận yêu cầu
+Khách hàng cung cấp thông tin về:
+·       Tên group/page.
+·       Loại dịch vụ, hạng mục cụ thể.
+·       Chủ đề/bối cảnh.
+·       Mục đích sử dụng.
+·       Đối tượng tham gia.
+·       Quy mô dự kiến.
+·       Thời gian diễn ra.
+·       Hình thức tham gia.
+·       Cơ chế thưởng (nếu đã có)
+·       Yêu cầu đặc biệt (nếu có).
+·       Thời gian cần hoàn thành.
+3.2. Xác định phạm vi
+Hai bên thống nhất về:
+·       Hạng mục cần thực hiện.
+·       Nội dung cần bàn giao.
+·       Số lần và phạm vi chỉnh sửa.
+·       Các yêu cầu riêng.
+·       Giá dịch vụ.
+·       Thời gian dự kiến hoàn thành.
+·       Hình thức bàn giao.
+·       Quyền sử dụng sản phẩm.
+3.3. Báo giá và xác nhận
+Sau khi thống nhất phạm vi, Phong Hưởng tiến hành báo giá, chi phí xác định dựa trên:
+·       Hạng mục dịch vụ.
+·       Khối lượng nội dung.
+·       Độ phức tạp.
+·       Thời gian thực hiện.
+·       Các yêu cầu riêng của từng đơn hàng.
+Tùy vào từng đơn, có thể áp dụng:
+·       Thanh toán toàn bộ trước khi thực hiện.
+·       Đặt cọc tối thiểu 50% giá trị đơn hàng.
+Đơn hàng chỉ được xem là chính thức xác nhận khi hai bên đã thống nhất các nội dung cần thiết và hoàn tất khoản thanh toán theo thỏa thuận.
+3.4. Khách hàng cung cấp nội dung
+Khách hàng chịu trách nhiệm cung cấp thông tin cần thiết để thực hiện đơn hàng.
+Các nội dung có thể bao gồm:
+·       Nội dung sự kiện.
+·       Hình ảnh.
+·       Logo.
+·       Tài liệu tham khảo.
+·       Thông tin phần thưởng.
+·       Thông tin group.
+·       Thông tin người tham gia.
+·       Những tài nguyên khác đã thống nhất.
+Khách hàng chịu trách nhiệm về quyền sử dụng đối với nội dung do mình cung cấp.
+3.5. Thực hiện
+Phong Hưởng tiến hành xây dựng sản phẩm theo phạm vi đã thống nhất.
+Trong quá trình thực hiện, nếu phát sinh vấn đề ảnh hưởng đến nội dung hoặc tiến độ, hai bên sẽ trao đổi để xử lý.
+3.6. Xem trước và chỉnh sửa
+Sau khi hoàn thành bản dự kiến, Phong Hưởng gửi sản phẩm để khách hàng kiểm tra. Khách hàng có quyền phản hồi và yêu cầu chỉnh sửa trong phạm vi đã thỏa thuận khi đặt đơn.
+3.6.1. Chỉnh sửa trong phạm vi đơn hàng:
+Các chỉnh sửa nhỏ nhằm hoàn thiện sản phẩm theo brief ban đầu được thực hiện trong số lần chỉnh sửa đã thống nhất.
+Ví dụ:
+·       Sửa câu chữ.
+·       Điều chỉnh chi tiết.
+·       Bổ sung thông tin đã có trong brief.
+·       Điều chỉnh cách trình bày.
+·       Cân chỉnh cơ chế theo yêu cầu ban đầu.
+3.6.2. Yêu cầu phát sinh
+Những thay đổi làm thay đổi đáng kể phạm vi công việc có thể được xem là yêu cầu phát sinh, chẳng hạn:
+·       Đổi concept.
+·       Đổi chủ đề.
+·       Thay đổi cốt truyện chính.
+·       Thay đổi toàn bộ cơ chế.
+·       Thêm nhiều hạng mục mới.
+·       Thay đổi phương thức triển khai.
+·       Yêu cầu xây dựng lại phần đã được xác nhận trước đó.
+Yêu cầu phát sinh sẽ được báo lại về chi phí và thời gian trước khi thực hiện.
+Sau khi khách hàng đã xác nhận sản phẩm hoàn tất, các yêu cầu thay đổi hoặc bổ sung mới được xem là hạng mục phát sinh.
+3.7. Bàn giao hoàn thiện
+3.7.1. Bàn giao và nghiệm thu
+Sau khi hoàn tất chỉnh sửa và xác nhận nội dung, Phong Hưởng tiến hành bàn giao sản phẩm theo hình thức đã thống nhất.
+Khách hàng có trách nhiệm kiểm tra sản phẩm sau khi nhận bàn giao.
+Sản phẩm được xem là hoàn tất khi:
+·       Khách hàng xác nhận nghiệm thu.
+·       Hai bên đã hoàn tất các nội dung chỉnh sửa thuộc phạm vi đơn hàng và không còn yêu cầu bổ sung trong thời gian kiểm tra đã thỏa thuận.
+Sau khi sản phẩm được xác nhận hoàn tất, đơn hàng được chuyển sang trạng thái hoàn thành.
+3.7.2. Hỗ trợ sau bàn giao
+Sau khi bàn giao, Phong Hưởng hỗ trợ giải đáp các vấn đề liên quan trực tiếp đến sản phẩm trong phạm vi đơn hàng.
+Các yêu cầu như:
+·       Thay đổi nội dung.
+·       Thêm cơ chế.
+·       Bổ sung hạng mục.
+·       Viết lại nội dung.
+·       Thay đổi phương thức triển khai.
+·       Phát triển thêm từ sản phẩm cũ.
+Sau khi đơn đã hoàn tất được xem là yêu cầu mới hoặc hạng mục phát sinh và có thể được báo giá riêng.
+4. THỜI GIAN THỰC HIỆN
+Thời gian thực hiện được tính từ thời điểm:
+Đơn hàng được xác nhận + Phong Hưởng đã nhận đủ thông tin cần thiết để bắt đầu thực hiện.
+Thời gian tham khảo:
+4.1. Ý tưởng
+·       Ý tưởng đơn giản: 03 – 05 ngày.
+·       Ý tưởng có độ phức tạp cao hơn: 05 – 07 ngày.
+·       Ý tưởng xây dựng riêng theo brief hoặc có nhiều cơ chế: 07 – 10 ngày.
+4.2. Kế hoạch
+·       Kế hoạch cơ bản: 05 – 07 ngày.
+·       Kế hoạch có nhiều nội dung hoặc cơ chế: 07 – 10 ngày.
+·       Kế hoạch quy mô lớn, nhiều giai đoạn hoặc yêu cầu phức tạp: 10 – 14 ngày.
+4.3. Tư vấn truyền thông
+·       Tư vấn cơ bản: 02 – 03 ngày.
+·       Tư vấn kèm lịch và định hướng nội dung: 03 – 05 ngày.
+·       Tư vấn nhiều giai đoạn hoặc có phạm vi lớn: 05 – 07 ngày.
+4.4. Đơn hàng kết hợp
+Đối với đơn hàng kết hợp nhiều hạng mục, thời gian được xác định dựa trên tổng phạm vi và khối lượng công việc, không mặc định cộng dồn thời gian của từng hạng mục.
+Thời gian cụ thể sẽ được thông báo và xác nhận trước khi bắt đầu thực hiện.
+Đơn hàng có yêu cầu hoàn thành gấp có thể được xem xét tùy tình trạng nhận đơn và khối lượng công việc. Phong Hưởng có quyền từ chối đơn gấp nếu thời gian không đảm bảo chất lượng sản phẩm.
+Nếu nhận đơn gấp, thời gian và chi phí sẽ được thỏa thuận riêng.
+4.5. Trường hợp thay đổi tiến độ
+Thời gian hoàn thành có thể được điều chỉnh khi:
+·       Phạm vi công việc thay đổi.
+·       Khách hàng chậm cung cấp thông tin.
+·       Khách hàng chậm phản hồi.
+·       Có yêu cầu bổ sung.
+·       Có nội dung cần chờ từ bên thứ ba.
+·       Có phát sinh ngoài phạm vi ban đầu.
+Việc thay đổi thời gian sẽ được thông báo cho khách hàng khi phát sinh.
+5. NHẬN ĐƠN VÀ TỪ CHỐI ĐƠN
+Phong Hưởng có quyền từ chối những đơn hàng:
+·       Không phù hợp với phạm vi dịch vụ.
+·       Không đủ thông tin để thực hiện.
+·       Có thời gian thực hiện không khả thi.
+·       Có nội dung vi phạm quy định, vi phạm pháp luật.
+·       Có yêu cầu vượt quá khả năng thực hiện.
+·       Có vấn đề liên quan đến quyền sử dụng nội dung.
+·       Có yêu cầu thay đổi quá nhiều so với phạm vi dịch vụ nhưng không thống nhất được phương án thực hiện.
+Đối với đơn hàng chưa đủ thông tin, Phong Hưởng có thể yêu cầu khách hàng bổ sung brief trước khi báo giá hoặc xác nhận nhận đơn.
+6. QUY ĐỊNH HỦY ĐƠN & HOÀN ĐƠN
+6.1. Trước khi bắt đầu
+Nếu công việc chưa bắt đầu, khoản đã thanh toán có thể được xử lý theo thỏa thuận giữa hai bên, sau khi xem xét các chi phí đã phát sinh nếu có.
+6.2. Khách hàng hủy trong quá trình thực hiện
+Khoản hoàn lại, nếu có, được xác định dựa trên:
+·       Khối lượng công việc đã hoàn thành.
+·       Chi phí đã phát sinh.
+·       Phần công việc chưa thực hiện.
+·       Các thỏa thuận thanh toán đã xác nhận trước đó.
+Không mặc định hoàn toàn bộ chi phí sau khi công việc đã được triển khai.
+6.3. Sau khi bàn giao
+Sau khi sản phẩm đã được bàn giao và khách hàng xác nhận hoàn tất, đơn được xem là hoàn thành.
+Các yêu cầu thay đổi mới sau thời điểm này được tính như một hạng mục phát sinh.
+6.4. Trường hợp Phong Hưởng không thể tiếp tục đơn
+Nếu Phong Hưởng chủ động hủy đơn vì lý do thuộc về phía mình, khách hàng sẽ được thông báo và hoàn lại phần chi phí tương ứng với phần công việc chưa thực hiện.
+7. XÁC NHẬN ĐƠN HÀNG
+Khi khách hàng xác nhận đặt hàng, khách hàng được xem là đã đồng ý với:
+·       Loại dịch vụ.
+·       Phạm vi công việc.
+·       Nội dung.
+·       Hình thức bàn giao.
+·       Thời gian dự kiến.
+·       Chi phí.
+·       Quy định chỉnh sửa.
+·       Quyền sử dụng sản phẩm.
+·       Quy định về sản phẩm độc quyền / không độc quyền.
+·       Quy định về yêu cầu phát sinh.
+·       Quy định hủy và hoàn đơn.
+Các nội dung đặc biệt hoặc khác với quy định chung sẽ được ghi rõ trong thỏa thuận riêng của từng đơn hàng.
+8. QUYỀN SỬ DỤNG VÀ BÀN GIAO
+Sau khi hoàn tất thanh toán, khách hàng được sử dụng sản phẩm trong phạm vi đã thỏa thuận.
+Đối với ý tưởng sự kiện, cần xác định ngay từ đầu sản phẩm thuộc loại:
+Ý tưởng độc quyền.
+Ý tưởng không độc quyền.
+8.1. Ý tưởng độc quyền
+Sản phẩm được thỏa thuận là độc quyền sẽ không được tiếp tục bán lại nguyên dạng cho khách hàng khác trong phạm vi độc quyền đã thống nhất.
+Phạm vi độc quyền cần được xác định rõ trước khi đặt đơn nếu có yêu cầu đặc biệt về thời hạn hoặc phạm vi sử dụng.
+8.2. Ý tưởng không độc quyền
+Ý tưởng không độc quyền có thể tiếp tục được phát triển, biến đổi hoặc sử dụng làm cơ sở cho những sản phẩm khác.
+Việc khách hàng mua quyền sử dụng sản phẩm không đồng nghĩa với việc khách hàng sở hữu độc quyền toàn bộ concept, ý tưởng hoặc cơ chế nếu hai bên không có thỏa thuận độc quyền.
+8.3. Quyền sở hữu
+Khách hàng không được tự ý bán lại, chuyển nhượng hoặc công bố sản phẩm đã thỏa thuận là độc quyền cho bên thứ ba nếu chưa có sự thống nhất với Phong Hưởng.
+9. GIÁ DỊCH VỤ VÀ THANH TOÁN
+Giá dịch vụ được xác định dựa trên:
+·       Hạng mục đặt hàng.
+·       Khối lượng nội dung.
+·       Mức độ phức tạp.
+·       Thời gian thực hiện.
+·       Yêu cầu riêng của khách hàng.
+Bảng giá hoặc menu dịch vụ được công bố riêng và có thể được cập nhật tùy từng thời điểm.
+Báo giá chính thức được xác nhận sau khi đã tiếp nhận và thống nhất brief.
+Các chi phí phát sinh ngoài phạm vi đơn hàng sẽ được thông báo và thống nhất trước khi thực hiện.
+10. TRÁCH NHIỆM CỦA KHÁCH HÀNG
+Khách hàng có trách nhiệm:
+·       Cung cấp thông tin chính xác và đầy đủ.
+·       Cung cấp tài liệu đúng thời hạn.
+·       Đảm bảo quyền sử dụng đối với nội dung do mình cung cấp.
+·       Phản hồi trong thời gian đã thỏa thuận.
+·       Kiểm tra sản phẩm sau khi nhận bàn giao.
+·       Thanh toán đúng thời hạn.
+·       Thông báo sớm nếu có thay đổi ảnh hưởng đến tiến độ hoặc phạm vi công việc.
+·       Tự chịu trách nhiệm đối với việc tổ chức và vận hành sự kiện nếu không đặt dịch vụ vận hành riêng.
+11. TRÁCH NHIỆM CỦA PHONG HƯỞNG
+Phong Hưởng có trách nhiệm:
+·       Thực hiện đúng phạm vi đã thống nhất.
+·       Đảm bảo sản phẩm được xây dựng theo brief và nội dung đã xác nhận.
+·       Thông báo khi có vấn đề ảnh hưởng đáng kể đến tiến độ.
+·       Thông báo trước đối với các yêu cầu phát sinh về chi phí hoặc thời gian.
+·       Bàn giao sản phẩm theo hình thức đã thỏa thuận.
+·       Hỗ trợ khách hàng trong phạm vi dịch vụ sau khi bàn giao.
+Phong Hưởng không chịu trách nhiệm đối với những thay đổi, vấn đề hoặc tranh chấp phát sinh từ việc khách hàng tự triển khai sự kiện ngoài phạm vi dịch vụ đã đặt.
+12. TRƯỜNG HỢP PHÁT SINH
+Đối với những trường hợp không được quy định cụ thể trong văn bản này, hai bên sẽ trao đổi và thống nhất phương án xử lý dựa trên:
+·       Phạm vi đơn hàng.
+·       Nội dung đã xác nhận.
+·       Khối lượng công việc thực tế.
+·       Thời gian thực hiện.
+·       Chi phí phát sinh nếu có.
+Mọi thay đổi quan trọng liên quan đến phạm vi, chi phí hoặc thời gian nên được xác nhận trước khi thực hiện.
+LƯU Ý CHUNG
+Quy định này áp dụng cho các đơn hàng thuộc mảng Sự kiện của Chí Quy do Phong Hưởng phụ trách.
+Tùy từng đơn hàng, một số nội dung có thể được điều chỉnh hoặc thỏa thuận riêng để phù hợp với yêu cầu thực tế.
+Trong trường hợp có thỏa thuận riêng bằng văn bản hoặc tin nhắn xác nhận giữa hai bên, nội dung đã thống nhất cho đơn hàng cụ thể được ưu tiên áp dụng cho đơn hàng đó.
+ 
+ 
+ 
+ 
+ 
+
