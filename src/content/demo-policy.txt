@@ -1,0 +1,86 @@
+QUY ĐỊNH ĐẶT MUA VÀ PHÁT TRIỂN DEMO
+I. THÔNG TIN LIÊN HỆ
+Facebook: Link tài khoản Facebook của khách hàng
+Email liên hệ: Email của khách hàng
+Mức giá đề xuất cho mỗi Demo: Do khách hàng tự đưa ra khi gửi yêu cầu mua Demo.
+II. QUY TRÌNH ĐẶT MUA DEMO
+Khách hàng thông thường có thể truy cập website và xem công khai các Demo đang được trưng bày.
+Đối với khách hàng có nhu cầu đặt mua Demo, khách hàng cần đăng ký và hoàn tất tài khoản thành viên trên website.
+Sau khi đăng ký tài khoản thành công, khách hàng có thể:
+Xem và lựa chọn các Demo đang được công khai.
+Thêm Demo có nhu cầu mua vào giỏ hàng.
+Điền đầy đủ thông tin theo yêu cầu đối với từng Demo.
+Đưa ra mức giá mong muốn để đề xuất mua Demo.
+Gửi yêu cầu đặt mua đến Chí Quy.
+Thời gian phản hồi: Trong vòng 07 ngày kể từ thời điểm Chí Quy nhận được yêu cầu đặt mua đầy đủ thông tin.
+III. MỨC GIÁ ĐỀ XUẤT
+Trước khi gửi yêu cầu đặt mua, mỗi Demo trong giỏ hàng sẽ bắt buộc phải có mức giá đề xuất.
+Mức giá này được hiểu là:
+Mức giá mà khách hàng đề xuất để Chí Quy xem xét chuyển giao quyền sở hữu Demo và tiếp tục phát triển, hoàn thiện sản phẩm theo nhu cầu của khách hàng.
+Mức giá khách hàng đưa ra không đồng nghĩa với việc giao dịch chắc chắn được chấp thuận.
+Chí Quy có toàn quyền xem xét mức giá, nội dung yêu cầu, phạm vi phát triển và các điều kiện liên quan trước khi quyết định chấp thuận hoặc từ chối giao dịch.
+Phương thức thanh toán
+Các giao dịch mua Demo được thực hiện bằng hình thức chuyển khoản, trừ trường hợp hai bên có thỏa thuận khác.
+Mức giá khách hàng nhập khi gửi yêu cầu là mức giá đề xuất, chưa phải là khoản thanh toán chính thức cho đến khi Chí Quy xác nhận đồng ý giao dịch.
+IV. THỜI GIAN PHẢN HỒI
+Sau khi nhận được yêu cầu đặt mua đầy đủ thông tin, Chí Quy sẽ tiến hành xem xét.
+Trong vòng 07 ngày, khách hàng sẽ nhận được phản hồi qua email về kết quả:
+Chấp thuận giao dịch, hoặc
+Từ chối giao dịch.
+Trường hợp được chấp thuận, Chí Quy sẽ cung cấp thông tin cần thiết để khách hàng tiến hành thanh toán và thực hiện các bước tiếp theo.
+Thời gian 07 ngày là thời gian xem xét và phản hồi yêu cầu, không bao gồm thời gian phát triển, chỉnh sửa hoặc hoàn thiện Demo sau khi giao dịch thành công.
+QUY ĐỊNH RIÊNG DÀNH CHO DEMO
+1. Quyền đề xuất mua Demo
+Các Demo được Chí Quy trưng bày công khai trên website có thể được khách hàng lựa chọn và đề xuất mua nếu khách hàng có nhu cầu.
+Khách hàng có thể đưa ra mức giá mong muốn để đề xuất mua lại Demo và yêu cầu phát triển thêm theo nhu cầu riêng.
+Việc có chấp thuận giao dịch hay không hoàn toàn thuộc quyền quyết định của Chí Quy.
+Kết quả sẽ được phản hồi cho khách hàng trong thời gian tối đa 07 ngày kể từ khi yêu cầu hợp lệ được gửi.
+2. Mỗi Demo chỉ chuyển giao cho một khách hàng
+Mỗi Demo chỉ được bán và chuyển giao quyền sở hữu một lần cho một khách hàng duy nhất.
+Sau khi giao dịch được hoàn tất, Demo sẽ được đánh dấu là đã chuyển giao / Slot Out và không tiếp tục nhận yêu cầu mua lại từ khách hàng khác.
+Tuy nhiên, Demo đã được bán vẫn có thể tiếp tục xuất hiện công khai trên website của Chí Quy dưới tư cách:
+Sample / Showcase / Sản phẩm mẫu
+Việc Demo tiếp tục được trưng bày không có nghĩa Chí Quy tiếp tục bán hoặc chuyển giao Demo đó cho khách hàng khác.
+3. Phát triển và hoàn thiện Demo sau khi giao dịch
+Chí Quy có hỗ trợ phát triển, chỉnh sửa và hoàn thiện Demo sau khi giao dịch thành công, tùy theo phạm vi thỏa thuận giữa hai bên.
+Khách hàng có thể yêu cầu:
+Bổ sung chức năng.
+Thay đổi giao diện.
+Bổ sung hoặc thay đổi nội dung.
+Thiết lập các thành phần của website.
+Tùy chỉnh Demo theo nhu cầu cá nhân.
+Hoàn thiện Demo thành sản phẩm sử dụng thực tế.
+Sau khi giao dịch thành công, khách hàng cần liên hệ với Chí Quy và cung cấp nội dung, tài liệu hoặc file ý tưởng cần thiết để tiến hành phát triển.
+Trường hợp khách hàng không có nhu cầu phát triển thêm, Chí Quy chỉ bàn giao sản phẩm Demo theo phạm vi giao dịch đã thống nhất.
+4. Phạm vi bàn giao
+Sản phẩm được bàn giao là website/Demo hoàn chỉnh theo phạm vi giao dịch.
+Việc bàn giao không bao gồm mã nguồn, repository, file dự án, file phát triển nội bộ hoặc các tài nguyên kỹ thuật nội bộ khác.
+5. Quyền sử dụng Demo để trưng bày và truyền thông
+Chí Quy có quyền tiếp tục sử dụng hình ảnh, giao diện, video giới thiệu, bản xem trước hoặc các nội dung liên quan đến Demo để:
+PR.
+Truyền thông.
+Giới thiệu năng lực.
+Trưng bày sản phẩm.
+Làm sản phẩm mẫu.
+Đăng tải trên website và các kênh truyền thông của Chí Quy.
+Việc sử dụng với mục đích trưng bày và truyền thông không đồng nghĩa với việc Chí Quy bán hoặc chuyển giao Demo đó cho khách hàng khác.
+6. Trách nhiệm của khách hàng
+Khách hàng có trách nhiệm cung cấp thông tin chính xác và đầy đủ trong quá trình đặt mua.
+Khách hàng tự chịu trách nhiệm đối với các nội dung do mình cung cấp và yêu cầu đưa vào sản phẩm.
+7. Thay đổi yêu cầu sau khi giao dịch
+Các yêu cầu phát triển thêm ngoài phạm vi Demo ban đầu có thể được Chí Quy xem xét và báo lại tùy theo mức độ công việc.
+Những thay đổi lớn về chức năng, giao diện hoặc mục đích sử dụng có thể được xem là phát triển bổ sung và hai bên sẽ thống nhất lại phạm vi, chi phí và thời gian thực hiện trước khi tiến hành.
+8. Quyền quyết định của Chí Quy
+Chí Quy có quyền từ chối bất kỳ yêu cầu đặt mua Demo nào mà không bắt buộc phải chấp thuận mức giá do khách hàng đề xuất.
+Các trường hợp có thể được xem xét từ chối bao gồm nhưng không giới hạn ở:
+Mức giá không phù hợp.
+Yêu cầu phát triển không phù hợp.
+Nội dung hoặc mục đích sử dụng không phù hợp.
+Demo đã có giao dịch trước đó.
+Yêu cầu vượt quá phạm vi phát triển mà Chí Quy có thể đáp ứng.
+Các lý do khác thuộc quyền quyết định của Chí Quy.
+Quyết định cuối cùng về việc chấp thuận hoặc từ chối giao dịch thuộc về Chí Quy.
+LƯU Ý
+Việc thêm Demo vào giỏ hàng và gửi mức giá chỉ được xem là một yêu cầu đề xuất mua, chưa được xem là giao dịch hoàn tất.
+Giao dịch chỉ được xác nhận sau khi Chí Quy phản hồi chấp thuận và hai bên hoàn tất các bước thanh toán, bàn giao theo thỏa thuận.
+Trong trường hợp có thỏa thuận riêng giữa Chí Quy và khách hàng, nội dung thỏa thuận riêng sẽ được ưu tiên áp dụng đối với giao dịch đó.
