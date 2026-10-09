@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as SamplesRouteImport } from './routes/samples'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedCartRouteImport } from './routes/_authenticated/cart'
@@ -29,6 +30,11 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliciesRoute = PoliciesRouteImport.update({
+  id: '/policies',
+  path: '/policies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SamplesRoute = SamplesRouteImport.update({
@@ -55,6 +61,7 @@ const ServicesServiceRoute = ServicesServiceRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/policies': typeof PoliciesRoute
   '/samples': typeof SamplesRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/cart': typeof AuthenticatedCartRoute
@@ -63,6 +70,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/policies': typeof PoliciesRoute
   '/samples': typeof SamplesRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/cart': typeof AuthenticatedCartRoute
@@ -73,6 +81,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/policies': typeof PoliciesRoute
   '/samples': typeof SamplesRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/cart': typeof AuthenticatedCartRoute
@@ -81,14 +90,28 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/auth' | '/samples' | '/admin' | '/cart' | '/services/$service'
+    | '/'
+    | '/auth'
+    | '/policies'
+    | '/samples'
+    | '/admin'
+    | '/cart'
+    | '/services/$service'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/samples' | '/admin' | '/cart' | '/services/$service'
+  to:
+    | '/'
+    | '/auth'
+    | '/policies'
+    | '/samples'
+    | '/admin'
+    | '/cart'
+    | '/services/$service'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/policies'
     | '/samples'
     | '/_authenticated/admin'
     | '/_authenticated/cart'
@@ -99,6 +122,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  PoliciesRoute: typeof PoliciesRoute
   SamplesRoute: typeof SamplesRoute
   ServicesServiceRoute: typeof ServicesServiceRoute
 }
@@ -124,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/policies': {
+      id: '/policies'
+      path: '/policies'
+      fullPath: '/policies'
+      preLoaderRoute: typeof PoliciesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/samples': {
@@ -174,6 +205,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  PoliciesRoute: PoliciesRoute,
   SamplesRoute: SamplesRoute,
   ServicesServiceRoute: ServicesServiceRoute,
 }
